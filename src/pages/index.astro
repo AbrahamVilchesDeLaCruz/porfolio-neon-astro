@@ -1,11 +1,25 @@
 ---
-import Hola from '../components/Hola.astro';
 import Layout from '../layouts/Layout.astro';
-import '../styles/global.css'  
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+const posts: CollectionEntry<'blog'>[] = await getCollection('blog');
 ---
 
 <Layout>
-	<Hola />
+	<main class="max-w-3xl mx-auto py-10 px-4 text-white">
+		<h1 class="text-4xl font-bold mb-6">📝 Blog de desarrollo</h1>
+	
+		<ul class="space-y-4">
+		  {posts.map((post) => (
+			<li class="border-b border-white/20 pb-4">
+			  <a href={`/blog/${post.slug}/`} class="text-xl font-semibold hover:underline">
+				{post.data.title}
+			  </a>
+			  <p class="text-sm text-white/60">{post.data.description}</p>
+			  <time class="text-xs text-white/40">{post.data.pubDate.toLocaleDateString()}</time>
+			</li>
+		  ))}
+		</ul>
+	  </main>
 </Layout>

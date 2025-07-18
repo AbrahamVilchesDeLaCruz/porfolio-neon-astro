@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+// 👇 Necesario para rutas dinámicas
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post }: { post: CollectionEntry<'blog'> } = Astro.props;
+
+const { Content } = await post.render();
+const data = post.data;
+---
+
+<Layout>
+  <article class="max-w-3xl mx-auto py-10 px-4 text-white">
+    <h1 class="text-4xl font-bold mb-2">{data.title}</h1>
+    <p class="text-white/60 mb-4">{data.description}</p>
+    <time class="text-xs text-white/40 block mb-6">
+      {data.pubDate.toLocaleDateString()}
+    </time>
+
+    <Content />
+  </article>
+</Layout>
