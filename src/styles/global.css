@@ -12,7 +12,6 @@ body {
   font-weight: 400;
   font-style: normal;
   font-stretch: semi-expanded;
-  letter-spacing: var(--tracking-widest);
 }
 .neon-text {
   text-shadow: 0 0 5px #3799fa, 0 0 10px #3799fa, 0 0 15px #217bef, 0 0 20px #1a66e0,
@@ -39,14 +38,6 @@ body {
 
 .neon-button:hover {
   box-shadow: 0 0 15px #91d2ff, 0 0 30px #5db8fd, 0 0 40px #217bef;
-}
-
-.text-shadow-neon-caribbean {
-  text-shadow: 0 0 5px #1be6c2, 0 0 10px #02cfad, 0 0 20px #00a38b, 0 0 30px #048171;
-}
-
-.text-shadow-neon-turquoise {
-  text-shadow: 0 0 5px #1be6d5, 0 0 10px #02cfc1, 0 0 20px #00a39b, 0 0 30px #04817d;
 }
 
 #hero.fade-in {
