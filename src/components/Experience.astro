@@ -1,0 +1,77 @@
+---
+import SectionTitle from './SectionTitle.astro';
+---
+<section class="py-16 text-white">
+  <SectionTitle title="Experiencia" />
+  <div class="relative flex flex-col items-center w-full max-w-7xl mx-auto">
+    <div class="flex flex-col w-full z-10">
+      {[
+        {
+          role: "Software Developer",
+          company: "Devio Tech",
+          period: "Mayo 2025 - Actual",
+          description: {
+            backend: "Diseño y desarrollo de soluciones completas. Implementación de APIs escalables, garantizando robustez y flexibilidad.",
+            frontend: "Diseño y desarrollo de CRM con React, mejorando la experiencia del usuario.",
+          },
+          backendTechnologies: ["PostgreSQL", "Node.js", "RabbitMQ", "Socket.IO", "AWS", "Docker"],
+          frontendTechnologies: ["React", "TailwindCSS", "Vite"],
+          image: "https://gdm-catalog-fmapi-prod.imgix.net/ProviderLogo/b5730ad9-3d42-4993-a5c9-e65cc58d26c2.png",
+        },
+        {
+          role: "Software Developer",
+          company: "Feeder the Reaction App SL",
+          period: "Junio 2024 - Abril 2025",
+          description: {
+            backend: "Diseño y desarrollo de soluciones completas siguiendo principios de arquitectura limpia (DDD) y patrones de Event-Driven Architecture. Implementación de APIs escalables y microservicios, garantizando robustez y flexibilidad.",
+            frontend: "Diseño y desarrollo de interfaces de usuario modernas y dinámicas con React, mejorando la experiencia del usuario en diversos productos.",
+          },
+          backendTechnologies: ["Symfony", "NestJS", "MySQL", "Node.js", "RabbitMQ", "Socket.IO", "AWS", "Docker"],
+          frontendTechnologies: ["React", "TailwindCSS", "Vite"],
+          image: "https://cdn.prod.website-files.com/5ec807c5d85901644b2db3b2/5fb637f59666baea40468771_logo_h.png",
+        },
+        {
+          role: "Full Stack Developer",
+          company: "Sensing Tex S.L.",
+          period: "Septiembre 2023 - Junio 2024",
+          description: {
+            backend: "Desarrollo de APIs RESTful y APIs Socket con Flask y Python, usado MongoDB cómo base de datos NoSQL",
+            frontend: "Diseño y desarrollo de interfaces de usuario modernas y dinámicas con React y Tailwind mejorando la experiencia del usuario en diversos productos.",
+          },
+          backendTechnologies: ["Flask", "Python", "MongoDB", "Socket.IO"],
+          frontendTechnologies: ["React", "TailwindCSS"],
+          image: "https://sensingtex.com/wp-content/uploads/2017/11/Logo-Sensingtex.png",
+        },
+      ].map((experience) => (
+        <div class="bg-mariner-950 border-2 border-mariner-400 rounded-lg p-8 shadow-lg w-full max-w-md flex flex-col items-center mb-8">
+          <header class="flex items-center justify-around justify-items-cente p-6 w-full">
+            <div class="w-2/3">
+              <h3 class="text-xl font-semibold text-mariner-100">{experience.role}</h3>
+              <p class="text-md text-mariner-300">{experience.company}</p>
+              <span class="text-sm text-mariner-400">{experience.period}</span>
+            </div>
+            <div class="w-1/2 flex items-center justify-center">
+              <img
+                src={experience.image}
+                alt={`${experience.company} logo`}
+                loading="lazy"
+                class="max-w-full max-h-full"
+              />
+            </div>
+          </header>
+          <hr class="w-4/5 border-2 border-mariner-400 shadow-neon " />
+          <div class="flex flex-col gap-4 p-6">
+            <div>
+              <h4 class="text-xl font-bold text-mariner-100 neon-effect mb-4 text-left">Backend</h4>
+              <p class="text-mariner-300 leading-relaxed font-semibold text-center">{experience.description.backend}</p>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-mariner-100 neon-effect mb-4 text-left">Frontend</h4>
+              <p class="text-mariner-300 leading-relaxed font-semibold text-center">{experience.description.frontend}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 

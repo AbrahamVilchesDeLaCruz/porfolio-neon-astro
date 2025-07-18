@@ -1,18 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Experience from '../components/Experience.astro';
+import TrainingSection from '../components/TrainingSection.astro';
+import Projects from '../components/Projects.astro';
+import Books from '../components/Books.astro';
+import Contact from '../components/Contact.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <Layout>
-  <section class="max-w-3xl mx-auto py-16 px-4 text-white">
-    <h1 class="text-5xl font-bold mb-4 leading-tight">
-      👋 Hola, soy Abraham Vilches
-    </h1>
-    <p class="text-lg text-white/70 mb-8">
-      Desarrollador frontend apasionado por el diseño, el código limpio y la productividad. Este blog documenta el proceso de construcción de esta misma web con <strong>Astro</strong>, <strong>TypeScript</strong> y <strong>TailwindCSS</strong>.
-    </p>
-
-    <a href="/blog" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-6 py-3 rounded-xl transition-all">
-      📚 Leer el blog
-    </a>
-  </section>
+  <div id="hero" class="fade-in flex flex-col min-h-screen">
+    <Hero />
+  </div>
+  <section id="experience"><Experience /></section>
+  <section id="training"><TrainingSection /></section>
+  <section id="projects"><Projects /></section>
+  <section id="books"><Books /></section>
+  <section id="contact"><Contact /></section>
 </Layout>

@@ -1,1 +1,77 @@
 @import "tailwindcss";
+
+body {
+  font-family: "Cascadia Code", "Poppins", sans-serif;
+  background-color: black; /* #0d0c0c; */
+  scrollbar-gutter: stable;
+}
+
+.name-title {
+  font-family: "Cascadia Code", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: semi-expanded;
+  letter-spacing: var(--tracking-widest);
+}
+.neon-text {
+  text-shadow: 0 0 5px #3799fa, 0 0 10px #3799fa, 0 0 15px #217bef, 0 0 20px #1a66e0,
+    0 0 30px #1b51b2;
+}
+/* Sombra neon prolongada para elementos grandes como el div de Presentation */
+.neon-container {
+  box-shadow: 0 0 10px rgba(91, 184, 253, 0.4), 0 0 20px rgba(55, 153, 250, 0.3),
+    0 0 30px rgba(33, 123, 239, 0.2), 0 0 40px rgba(26, 102, 224, 0.1),
+    0 0 50px rgba(27, 81, 178, 0.05);
+}
+
+/* Sombra específica para Presentation que simula el efecto del Stiker */
+.neon-presentation {
+  box-shadow: 0 0 15px rgba(91, 184, 253, 0.6), 0 0 30px rgba(55, 153, 250, 0.4),
+    0 0 45px rgba(33, 123, 239, 0.3), 0 0 60px rgba(26, 102, 224, 0.2),
+    0 0 75px rgba(27, 81, 178, 0.1);
+}
+
+.neon-button {
+  box-shadow: 0 0 10px #91d2ff, 0 0 20px #5db8fd, 0 0 30px #3799fa;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 15px #91d2ff, 0 0 30px #5db8fd, 0 0 40px #217bef;
+}
+
+.text-shadow-neon-caribbean {
+  text-shadow: 0 0 5px #1be6c2, 0 0 10px #02cfad, 0 0 20px #00a38b, 0 0 30px #048171;
+}
+
+.text-shadow-neon-turquoise {
+  text-shadow: 0 0 5px #1be6d5, 0 0 10px #02cfc1, 0 0 20px #00a39b, 0 0 30px #04817d;
+}
+
+#hero.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
+}
+
+#hero.fade-out {
+  opacity: 0 !important;
+  transform: translateY(-50px) !important;
+  pointer-events: none !important;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
+}
+
+@theme {
+  --color-mariner-50: #eff8ff;
+  --color-mariner-100: #daefff;
+  --color-mariner-200: #bee3ff;
+  --color-mariner-300: #91d2ff;
+  --color-mariner-400: #5db8fd;
+  --color-mariner-500: #3799fa;
+  --color-mariner-600: #217bef;
+  --color-mariner-700: #1a66e0;
+  --color-mariner-800: #1b51b2;
+  --color-mariner-900: #1c478c;
+  --color-mariner-950: #162c55;
+}
