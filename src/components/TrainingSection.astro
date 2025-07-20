@@ -1,44 +1,14 @@
 ---
 import SectionTitle from './SectionTitle.astro';
+import { trainingData } from './training/data/training';
+import TrainingTech from './training/TrainingTech';
 ---
 <section class="py-16" aria-label="Training and Education Section">
   <div class="container mx-auto px-4">
     <SectionTitle title="Formación" />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {[
-        {
-          id: 1,
-          title: "Ingeniero Informático",
-          institution: "Universidad Autónoma de Barcelona",
-          duration: "2019 - 2024",
-          summary: "Estudio integral de los fundamentos de la informática, principios de ingeniería de software y desarrollo práctico de aplicaciones.",
-          technologies: ["C++","Bases de Datos","Sistemas Operativos","Estructuras de Datos","Java","Python","Redes","Algoritmos","Patrones de Diseño","Test y Calidad de Software"],
-          image: "https://www.uab.cat/ca/identitatcorporativa/img/logotip-uab-principal-negatiu-fons-negre/logotip-versio-1-principal-negatiu-negre-1401x787.png",
-          href: "https://www.uab.cat/web/estudiar/listado-de-grados/informacion-general/ingenieria-informatica-1216708258897.html?param1=1263367146646",
-        },
-        {
-          id: 2,
-          title: "Frontend Máster Online",
-          institution: "Lemoncode",
-          duration: "2024",
-          summary: "Desarrollo frontend avanzado enfocado en React, TypeScript y prácticas modernas de desarrollo web.",
-          technologies: ["React","Next.js","Angular","Vue.js","SolidJS","Astro","HTML5","CSS3","SASS","CSS Animations","Figma","Webpack","Vite","Jest","Vitest","React Testing Library","Playwright","Cypress","Fetch API","Axios","GraphQL","Socket.io","JWT","OAuth 2.0","Docker","AWS","Render","GitHub Actions","Micro Frontends","PWA","React Native","Web Components","Accessibility","SOLID Principles","Functional Programming"],
-          image: "https://images.squarespace-cdn.com/content/v1/56cdb491a3360cdd18de5e16/1536156479870-MM3AOEB6MLEQW1SD2ANU/3_white_200.png",
-          href: "https://lemoncode.net/",
-        },
-        {
-          id: 3,
-          title: "Cursos de Codely.tv",
-          institution: "Codely.tv",
-          duration: "2024 - presente",
-          summary: "Formación especializada en arquitectura de software, código limpio y mejores prácticas de desarrollo.",
-          technologies: ["Arquitectura Hexagonal", "DDD", "Clean Code", "TDD", "PHP", "Node.js"],
-          image: "https://pathwright.imgix.net/https%3A%2F%2Fcdn.filestackcontent.com%2Fapi%2Ffile%2FmR8srLQXSBKaRuMl5KFA%3Fsignature%3D888b9ea3eb997a4d59215bfbe2983c636df3c7da0ff8c6f85811ff74c8982e34%26policy%3DeyJjYWxsIjogWyJyZWFkIiwgInN0YXQiLCAiY29udmVydCJdLCAiZXhwaXJ5IjogNDYyMDM3NzAzMX0%253D?fit=crop&ixlib=python-1.1.0&w=500&s=87426dd64cc495cb74a08a80cc63edb2",
-          href: "https://codely.com/usuarios/abraham-vilches-zxOFk6",
-        },
-      ].map(item => (
+      {trainingData.map(item => (
         <div
-          key={item.id}
           class="rounded-lg transition-shadow duration-300 overflow-hidden border-2 border-mariner-400 hover:shadow-neon"
           role="article"
         >
@@ -58,19 +28,12 @@ import SectionTitle from './SectionTitle.astro';
             </div>
             <p class="text-white mt-4 leading-balance">{item.summary}</p>
             {item.technologies && item.technologies.length > 0 && (
-              <div class="mt-6">
-                <h4 class="text-sm font-semibold text-mariner-300 mb-2 tracking-wide">Tecnologías aprendidas</h4>
-                <ul class="flex flex-wrap justify-center items-center gap-2">
-                  {item.technologies.slice(0, 15).map((tech, index) => (
-                    <li
-                      key={index}
-                      class="text-sm bg-mariner-800 text-white px-3 py-1 rounded-full shadow-sm shadow-mariner-500 hover:scale-105 transition-transform duration-200"
-                    >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+             <TrainingTech
+             title={item.title}
+              id={item.id}
+              technologies={item.technologies}
+              client:visible 
+            />
             )}
           </div>
           <div class="px-6 pb-4">

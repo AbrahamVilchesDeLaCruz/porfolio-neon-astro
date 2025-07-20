@@ -3,32 +3,27 @@ import { experiences } from "./experience/data/experience-data";
 import { ExperienceTimelineItem } from "./experience/ExperienceTimelineItem";
 
 const Experience: React.FC = () => {
+  const barRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 
 /*   useEffect(() => {
     const handleScroll = () => {
-      if (!containerRef.current) return;
-
-      const scrollTop = window.scrollY || window.pageYOffset;
+      if (!containerRef.current || !barRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
-      const offsetTop = rect.top + scrollTop; // posición absoluta real en documento
-
-      const height = containerRef.current.offsetHeight;
       const windowHeight = window.innerHeight;
-
-      const scrollPassed = scrollTop + windowHeight - offsetTop;
-      const totalScrollable = height + windowHeight;
-
-      let percent = scrollPassed / totalScrollable;
-      percent = Math.min(Math.max(percent, 0), 1);
-
+      const totalHeight = rect.height;
+      let percent = 0;
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        percent = Math.max(
+          0,
+          Math.min(1, (windowHeight - rect.top) / (totalHeight + windowHeight))
+        );
+      }
       setProgress(percent);
     };
-
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []); */
 
@@ -39,6 +34,7 @@ const Experience: React.FC = () => {
     >
       <div className="hidden md:block absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-mariner-900 z-0">
         <div
+          ref={barRef}
           style={{ height: `${progress * 100}%` }}
           className="absolute left-0 top-0 w-full bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500 transition-all duration-300"
         />
