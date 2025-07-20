@@ -1,18 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Experience from '../components/Experience.astro';
+import Experience from '../components/Experience.tsx';
 import TrainingSection from '../components/TrainingSection.astro';
 import Projects from '../components/Projects.astro';
 import Books from '../components/Books.astro';
 import Contact from '../components/Contact.astro';
 import Hero from '../components/Hero.astro';
+import SectionTitle from '../components/SectionTitle.astro';
 ---
 
 <Layout>
   <div id="hero" class="fade-in flex flex-col min-h-screen">
     <Hero />
   </div>
-  <section id="experience"><Experience /></section>
+  <section id="experience">
+    <section class="py-16 text-white">
+      <SectionTitle title="Experiencia" />
+      <Experience transition:persist client:visible/>
+    </section>
+  </section>
   <section id="training"><TrainingSection /></section>
   <section id="projects"><Projects /></section>
   <section id="books"><Books /></section>
