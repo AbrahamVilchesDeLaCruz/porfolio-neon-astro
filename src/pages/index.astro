@@ -3,10 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import Experience from '../components/Experience';
 import TrainingSection from '../components/TrainingSection.astro';
 import Projects from '../components/Projects.astro';
-import Books from '../components/Books.astro';
 import Contact from '../components/Contact.astro';
 import Hero from '../components/Hero.astro';
 import SectionTitle from '../components/SectionTitle.astro';
+import Books from '../components/Books';
+
 ---
 
 <Layout>
@@ -21,6 +22,11 @@ import SectionTitle from '../components/SectionTitle.astro';
   </section>
   <section id="training"><TrainingSection /></section>
   <section id="projects"><Projects /></section>
-  <section id="books"><Books /></section>
+  <section id="books">
+    <section class="mx-auto px-4 py-8">
+      <SectionTitle title="Biblioteca Personal" />
+      <Books transition:persist client:visible/>
+    </section>
+  </section>
   <section id="contact"><Contact /></section>
 </Layout>
