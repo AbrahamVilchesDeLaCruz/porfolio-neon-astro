@@ -1,0 +1,34 @@
+---
+import Stiker from './hero/Stiker.astro';
+import Presentation from './hero/Presentation.astro';
+import Buttons from './hero/Buttons.astro';
+import SocialMedia from './hero/SocialMedia.astro';
+import ScrollDown from './hero/ScrollDown.astro';
+---
+<section class="relative flex-1 flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-8">
+  <div class="relative z-10 w-full max-w-7xl flex flex-col md:flex-row items-stretch md:items-stretch md:justify-center gap-8 md:gap-16">
+    <!-- Móvil: orden vertical -->
+    <div class="flex flex-col items-center justify-center w-full gap-4 md:hidden">
+      <Stiker />
+      <Presentation />
+      <Buttons />
+      <SocialMedia />
+    </div>
+    <!-- Desktop: dos columnas -->
+    <div class="hidden md:flex flex-row items-center justify-center w-full gap-16">
+      <div class="flex flex-col items-center justify-center w-2/5 gap-10 h-full">
+        <Stiker />
+        <Buttons />
+        <SocialMedia />
+      </div>
+      <div class="flex flex-col items-start justify-center text-left w-3/5 h-full">
+        <Presentation />
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none hidden sm:block">
+    <div class="pointer-events-auto">
+      <ScrollDown />
+    </div>
+  </div>
+</section> 

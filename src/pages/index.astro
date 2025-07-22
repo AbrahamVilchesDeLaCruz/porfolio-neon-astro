@@ -1,18 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Experience from '../components/Experience';
+import TrainingSection from '../components/TrainingSection.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import Hero from '../components/Hero.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import Books from '../components/Books';
+
 ---
 
 <Layout>
-  <section class="max-w-3xl mx-auto py-16 px-4 text-white">
-    <h1 class="text-5xl font-bold mb-4 leading-tight">
-      👋 Hola, soy Abraham Vilches
-    </h1>
-    <p class="text-lg text-white/70 mb-8">
-      Desarrollador frontend apasionado por el diseño, el código limpio y la productividad. Este blog documenta el proceso de construcción de esta misma web con <strong>Astro</strong>, <strong>TypeScript</strong> y <strong>TailwindCSS</strong>.
-    </p>
-
-    <a href="/blog" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-6 py-3 rounded-xl transition-all">
-      📚 Leer el blog
-    </a>
+  <div id="hero" class="fade-in flex flex-col min-h-screen">
+    <Hero />
+  </div>
+  <section id="experience">
+    <section class="py-16 text-white">
+      <SectionTitle title="Experiencia" />
+      <Experience transition:persist client:visible/>
+    </section>
   </section>
+  <section id="training"><TrainingSection /></section>
+  <section id="projects"><Projects /></section>
+  <section id="books">
+    <section class="mx-auto px-4 py-8">
+      <SectionTitle title="Biblioteca Personal" />
+      <Books transition:persist client:visible/>
+    </section>
+  </section>
+  <section id="contact"><Contact /></section>
 </Layout>

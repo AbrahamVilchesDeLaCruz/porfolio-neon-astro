@@ -1,0 +1,53 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import { trainingData } from './training/data/training';
+import TrainingTech from './training/TrainingTech';
+---
+<section class="py-16" aria-label="Training and Education Section">
+  <div class="container mx-auto px-4">
+    <SectionTitle title="Formación" />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {trainingData.map(item => (
+        <div
+          class="rounded-lg transition-shadow duration-300 overflow-hidden border-2 border-mariner-400 hover:shadow-neon"
+          role="article"
+        >
+          <div class="h-48 overflow-hidden flex items-center justify-center border-b-4 border-t-2 border-x-2 border-mariner-400 shadow-neon">
+            <img
+              src={item.image}
+              alt={`${item.institution} backdrop`}
+              class="object-cover"
+              style="image-rendering: auto;"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-mariner-100 mb-2">{item.title}</h3>
+            <div class="mb-2">
+              <p class="font-semibold text-mariner-300">{item.institution}</p>
+              <p class="text-sm text-mariner-500">{item.duration}</p>
+            </div>
+            <p class="text-white mt-4 leading-balance">{item.summary}</p>
+            {item.technologies && item.technologies.length > 0 && (
+             <TrainingTech
+             title={item.title}
+              id={item.id}
+              technologies={item.technologies}
+              client:visible 
+            />
+            )}
+          </div>
+          <div class="px-6 pb-4">
+            <a
+              class="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300 block text-center"
+              aria-label={`Learn more about ${item.title}`}
+              href={item.href}
+              target="_blank"
+            >
+              Más información
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 
