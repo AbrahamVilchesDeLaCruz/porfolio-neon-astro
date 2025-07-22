@@ -15,6 +15,7 @@ const useBreakpoint = () => {
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -57,7 +58,7 @@ const Books: React.FC = () => {
             onClick={prevSlide}
             className="absolute bg-white left-0 z-10 p-2 rounded-full shadow-lg hover:bg-gray-100 transform -translate-x-1/2 top-1/2"
           >
-            <FaChevronLeft className="text-2xl" />
+            <FaChevronLeft className="text-2xl text-black" />
           </button>
 
           <div className="w-full px-12">
@@ -87,7 +88,7 @@ const Books: React.FC = () => {
             onClick={nextSlide}
             className="absolute right-0 z-10 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transform translate-x-1/2 top-1/2"
           >
-            <FaChevronRight className="text-2xl" />
+            <FaChevronRight className="text-2xl text-black" />
           </button>
         </div>
       ) : (
