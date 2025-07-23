@@ -27,7 +27,7 @@ const TrainingTech: React.FC<TrainingTechProps> = ({ title, id, technologies }) 
         Tecnologías aprendidas
       </h4>
       <ul className="flex flex-wrap justify-center items-center gap-2">
-        {(expandedItems.has(id) ? technologies : technologies.slice(0, 15)).map((tech, index) => (
+        {(expandedItems.has(id) ? technologies : technologies.slice(0, 8)).map((tech, index) => (
           <li
             key={index}
             className="text-sm bg-mariner-800 text-white px-3 py-1 rounded-full shadow-sm shadow-mariner-500 hover:scale-105 transition-transform duration-200"
@@ -36,7 +36,7 @@ const TrainingTech: React.FC<TrainingTechProps> = ({ title, id, technologies }) 
           </li>
         ))}
       </ul>
-      {technologies.length > 15 && (
+      {technologies.length > 8 && (
         <button
           className="flex justify-center items-center w-full mt-4 text-sm text-blue-500 hover:underline text-center"
           onClick={() => toggleItem(id)}

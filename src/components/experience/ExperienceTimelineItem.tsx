@@ -12,7 +12,7 @@ export const ExperienceTimelineItem = ({ experience, index }: ExperienceTimeline
     <div className="relative w-full mb-16">
       {/* Mobile: bloque único */}
       <div className="flex flex-col md:hidden items-center ">
-        <div className="bg-mariner-950 border-2 border-mariner-400 rounded-lg p-4 shadow-lg w-full max-w-xs flex flex-col items-center">
+        <div className="bg-mariner-950 border-2 border-mariner-400 rounded-lg p-4 shadow-lg w-full max-w-xs sm:max-w-md flex flex-col items-center">
           <header className="flex items-center justify-around justify-items-cente gap-4">
             <div className="w-2/3">
               <h3 className="text-xl font-semibold text-mariner-100">{experience.role}</h3>
