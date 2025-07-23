@@ -4,15 +4,15 @@ import { trainingData } from './training/data/training';
 import TrainingTech from './training/TrainingTech';
 ---
 <section class="py-16" aria-label="Training and Education Section">
-  <div class="container mx-auto px-4">
+  <div class="px-4">
     <SectionTitle title="Formación" />
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-xs md:max-w-3xl lg:max-w-7xl mx-auto">
       {trainingData.map(item => (
         <div
-          class="rounded-lg transition-shadow duration-300 overflow-hidden border-2 border-mariner-400 hover:shadow-neon"
+          class="w-full rounded-lg transition-shadow duration-300 overflow-hidden border-2 border-mariner-400 hover:shadow-neon"
           role="article"
         >
-          <div class="h-48 overflow-hidden flex items-center justify-center border-b-4 border-t-2 border-x-2 border-mariner-400 shadow-neon">
+          <div class="h-36 overflow-hidden flex items-center justify-center border-b-4 border-t-2 border-x-2 border-mariner-400 shadow-neon">
             <img
               src={item.image}
               alt={`${item.institution} backdrop`}

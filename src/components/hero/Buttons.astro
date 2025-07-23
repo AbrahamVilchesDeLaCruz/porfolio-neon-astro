@@ -1,19 +1,26 @@
+---
+const row2 = "flex items-center justify-center text-sm sm:text-base font-semibold w-[80%] sm:w-[180px] px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white transition-all rounded-xl gap-2"
+---
+
 <div class="flex flex-col items-center gap-4 w-full max-w-sm sm:max-w-md md:max-w-none mb-2 px-4 sm:px-0">
   <!-- Fila 1: Sobre Mí arriba -->
   <div class="w-full flex justify-center">
-    <a href="/CV_Abraham_Vilches_de_la_Cruz.pdf" download="Abraham_Vilches_de_la_Cruz" class="flex items-center justify-center btn-secondary text-sm sm:text-base font-semibold w-[180px] px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white transition-all rounded-xl gap-2">
+    <a 
+      href="/CV_Abraham_Vilches_de_la_Cruz.pdf" 
+      download="Abraham_Vilches_de_la_Cruz"  
+      class="flex items-center justify-center font-semibold transition-all rounded-xl gap-2 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white text-sm px-4 py-2.5 w-[80%] sm:text-base sm:px-6 sm:py-3 sm:w-[180px]">
       <span role="img" aria-label="CV">📥</span>
       Sobre Mí
     </a>
   </div>
 
   <!-- Fila 2: Proyectos y Blog -->
-  <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 w-full justify-center">
-    <a href="#projects" class="flex items-center justify-center btn-secondary text-sm sm:text-base font-semibold w-[180px] px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white transition-all rounded-xl gap-2">
+  <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 w-full justify-center items-center">
+    <a href="#projects" class={row2}>
       <span role="img" aria-label="Proyectos">🚀</span>
       Proyectos
     </a>
-    <a href="/blog" class="flex items-center justify-center btn-secondary text-sm sm:text-base font-semibold  w-[180px] px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white transition-all rounded-xl gap-2">
+    <a href="/blog" class={row2}>
       <span role="img" aria-label="Blog">📒</span>
       Blog
     </a>

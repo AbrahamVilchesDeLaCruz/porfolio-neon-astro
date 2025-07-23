@@ -2,9 +2,9 @@
 import SectionTitle from './SectionTitle.astro';
 ---
 <section class="py-20">
-  <div class="container mx-auto px-4">
+  <div class="px-4">
     <SectionTitle title="Proyectos" />
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-xs md:max-w-3xl lg:max-w-4xl mx-auto">
       {[
         {
           id: 1,
@@ -35,7 +35,6 @@ import SectionTitle from './SectionTitle.astro';
         },
       ].map(project => (
         <div
-          key={project.id}
           class="relative group overflow-hidden rounded-xl transition-all duration-300 hover:transform hover:scale-[1.02] border-2 border-mariner-400 shadow-neon hover:shadow-neon"
         >
           <div class="relative h-48 overflow-hidden border-b-2 border-t-1 border-x-1  border-mariner-400 shadow-neon">
@@ -73,9 +72,8 @@ import SectionTitle from './SectionTitle.astro';
               {project.description}
             </p>
             <div class="flex flex-wrap gap-2 mb-4">
-              {project.tech.map((tech, index) => (
+              {project.tech.map((tech) => (
                 <span
-                  key={index}
                   class="px-3 py-1 text-sm bg-gray-700 text-gray-300 rounded-full flex items-center"
                 >
                   <!-- Code SVG -->
