@@ -8,6 +8,7 @@ interface IBook {
   image: string;
   author: string;
   summary: string;
+  amazonUrl?: string;
 }
 
 const useBreakpoint = () => {
@@ -79,6 +80,15 @@ const Books: React.FC = () => {
                     {book.title}
                   </h3>
                   <p className="text-mariner-600 mb-4 text-center">{book.author}</p>
+                  <button className="bg-mariner-900 text-mariner-300 px-4 py-2 rounded-lg">
+                    <a
+                      href={book.amazonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow sponsored"
+                    >
+                      📖 Más información
+                    </a>
+                  </button>
                 </div>
               </div>
             ))}
@@ -123,17 +133,28 @@ const Books: React.FC = () => {
                 alt={selectedBook.title}
                 className="w-64 h-auto object-cover shadow-neon"
               />
-              <div className="flex flex-col justify-center text-center items-center gap-y-2">
-                <h2 className="text-xl font-semibold text-mariner-100 mb-1 text-center">
-                  {selectedBook.title}
-                </h2>
-                <p className="text-sm text-mariner-300 mb-1 text-center">
-                  Autor: {selectedBook.author}
-                </p>
+              <article className="flex flex-col justify-center text-center items-center gap-y-6">
+                <header>
+                  <h2 className="text-xl font-semibold text-mariner-100 mb-1 text-center">
+                    {selectedBook.title}
+                  </h2>
+                  <p className="text-sm text-mariner-300 mb-1 text-center">
+                    Autor: {selectedBook.author}
+                  </p>
+                </header>
                 <p className="text-sm text-mariner-100 neon-effect mb-1 text-center">
                   {selectedBook.summary}
                 </p>
-              </div>
+                <button className="bg-mariner-900 text-mariner-300 px-4 py-2 rounded-lg text-sm">
+                  <a
+                    href={selectedBook.amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow sponsored"
+                  >
+                    📖 Más información
+                  </a>
+                </button>
+              </article>
             </div>
           )}
         </div>
