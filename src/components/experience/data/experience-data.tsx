@@ -32,19 +32,18 @@ export interface Tech {
 
 export const experiences: Experience[] = [
   {
-    role: "Software Developer",
+    role: "Software Engineer",
     company: "Devio Tech",
     period: "Mayo 2025 - Actual",
     description: {
       backend:
-        "Diseño y desarrollo de soluciones completas. Implementación de APIs escalables, garantizando robustez y flexibilidad.",
-      frontend: "Diseño y desarrollo de CRM con React, mejorando la experiencia del usuario.",
+        "Refactorización de arquitectura legacy a Domain Driven Design, implementación de nuevos contextos facilitando la agilidad y flexibilidad del código. Permitiendo crecer de manera segura con el producto. Mantenimiento e implementación de API HTTP y sistemas de cron service. Además de comunicación por hooks de PostgreSQL.",
+      frontend:
+        "Mantenimiento y refactorización del cliente CRM, pasando de una arquitectura por tipos a una hexagonal, permitiendo reutilización y desarrollo por contextos.",
     },
     backendTechnologies: [
       { name: "PostgreSQL", icon: <SiPostgresql className="text-4xl text-blue-500" /> },
       { name: "Node.js", icon: <FaNodeJs className="text-4xl text-green-500" /> },
-      { name: "RabbitMQ", icon: <SiRabbitmq className="text-4xl text-orange-500" /> },
-      { name: "Socket.IO", icon: <TbBrandSocketIo className="text-4xl text-teal-500" /> },
       { name: "AWS", icon: <FaAws className="text-4xl text-blue-500" /> },
       { name: "Docker", icon: <FaDocker className="text-4xl text-blue-500" /> },
     ],
