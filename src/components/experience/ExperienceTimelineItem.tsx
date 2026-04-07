@@ -6,11 +6,19 @@ type Props = {
   index: number;
 };
 
+const PX_PER_TAG = 120;  // ancho estimado por tag en px
+const PX_PER_SEC = 80;   // velocidad en px/s — igual para todas las bandas
+
 const TechMarquee = ({ techs, direction }: { techs: Tech[]; direction: "left" | "right" }) => {
   const doubled = [...techs, ...techs];
+  const duration = `${(techs.length * PX_PER_TAG) / PX_PER_SEC}s`;
+
   return (
     <div className="overflow-hidden w-full py-2">
-      <div className={`flex gap-3 w-max ${direction === "left" ? "animate-marquee-left" : "animate-marquee-right"}`}>
+      <div
+        style={{ "--marquee-duration": duration } as React.CSSProperties}
+        className={`flex gap-3 w-max ${direction === "left" ? "animate-marquee-left" : "animate-marquee-right"}`}
+      >
         {doubled.map((tech, idx) => (
           <span
             key={idx}
