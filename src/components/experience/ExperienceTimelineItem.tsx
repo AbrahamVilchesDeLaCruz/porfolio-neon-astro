@@ -6,8 +6,8 @@ type Props = {
   index: number;
 };
 
-const PX_PER_TAG = 120;  // ancho estimado por tag en px
-const PX_PER_SEC = 80;   // velocidad en px/s — igual para todas las bandas
+const PX_PER_TAG = 120;
+const PX_PER_SEC = 35;  // más lento
 
 const TechMarquee = ({ techs, direction }: { techs: Tech[]; direction: "left" | "right" }) => {
   const doubled = [...techs, ...techs];
@@ -64,7 +64,7 @@ export const ExperienceTimelineItem = ({ experience }: Props) => {
         </div>
 
         {/* Descripción */}
-        <div className="px-6 pb-5 flex flex-col gap-2">
+        <div className="px-6 pb-5 flex flex-col gap-2 flex-grow">
           <p className="text-sm text-mariner-300 leading-relaxed">{experience.description.backend}</p>
           {experience.description.frontend && (
             <p className="text-sm text-mariner-300 leading-relaxed">{experience.description.frontend}</p>
