@@ -4,7 +4,7 @@ import { ExperienceTimelineItem } from "./experience/ExperienceTimelineItem";
 const Experience: React.FC = () => {
   return (
     <div
-      className="w-full max-w-4xl mx-auto px-4"
+      className="w-full max-w-5xl mx-auto px-4"
     >
       <div className="flex flex-col gap-4 w-full">
         {experiences.map((experience, index) => (
