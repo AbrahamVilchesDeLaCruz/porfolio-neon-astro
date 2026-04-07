@@ -75,3 +75,18 @@ body {
   box-shadow: 0 0 5px #5db8fd, 0 0 10px #3799fa, 0 0 15px #217bef;
 }
 
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-marquee-left {
+  animation: marquee-left 18s linear infinite;
+}
+.animate-marquee-right {
+  animation: marquee-right 18s linear infinite;
+}
+
