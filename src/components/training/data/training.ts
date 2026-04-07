@@ -97,7 +97,7 @@ export const trainingData: Training[] = [
     id: 4,
     title: "Master en Desarrollo con IA",
     institution: "Big School",
-    duration: "2024 - presente",
+    duration: "2026 - presente",
     summary:
       "Programa orientado al diseño y desarrollo de soluciones con IA, integrando fundamentos de producto, automatización y aplicación práctica de capacidades inteligentes en software.",
     technologies: ["IA", "LLMs", "Automatización", "Ingeniería de Prompts", "Agentes IA"],
