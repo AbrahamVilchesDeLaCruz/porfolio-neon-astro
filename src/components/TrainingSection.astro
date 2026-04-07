@@ -1,47 +1,61 @@
 ---
 import SectionTitle from './SectionTitle.astro';
 import { trainingData } from './training/data/training';
-import TrainingTech from './training/TrainingTech';
 ---
 <section class="py-20" aria-label="Training and Education Section">
   <div class="px-4">
     <SectionTitle title="Formación" />
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-xs md:max-w-3xl lg:max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-xs md:max-w-3xl lg:max-w-7xl mx-auto">
       {trainingData.map(item => (
         <div
-          class="w-full rounded-lg transition-shadow duration-300 overflow-hidden border-2 border-mariner-400 hover:shadow-neon flex flex-col h-full"
+          class="w-full rounded-xl border border-mariner-600 hover:border-mariner-400 hover:shadow-neon transition-all duration-300 overflow-hidden flex flex-col bg-mariner-950/40"
           role="article"
         >
-          <div class="h-36 overflow-hidden flex items-center justify-center border-b-4 border-t-2 border-x-2 border-mariner-400 shadow-neon bg-mariner-950 p-4">
+          {/* Logo institución */}
+          <div class="h-28 overflow-hidden flex items-center justify-center border-b border-mariner-700 bg-mariner-950 p-4">
             <img
               src={item.image}
-              alt={`${item.institution} backdrop`}
+              alt={`${item.institution} logo`}
+              loading="lazy"
               class="object-contain max-h-full max-w-full"
-              style="image-rendering: auto;"
             />
           </div>
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-bold text-mariner-100 mb-2">{item.title}</h3>
-            <div class="mb-2">
-              <p class="font-semibold text-mariner-300">{item.institution}</p>
-              <p class="text-sm text-mariner-500">{item.duration}</p>
+
+          {/* Contenido */}
+          <div class="p-5 flex flex-col flex-grow gap-3">
+            <div>
+              <h3 class="text-base font-bold text-mariner-100 mb-0.5">{item.title}</h3>
+              <p class="text-sm font-medium text-mariner-300">{item.institution}</p>
+              <p class="text-xs text-mariner-500">{item.duration}</p>
             </div>
-            <p class="text-white mt-4 leading-relaxed flex-grow">{item.summary}</p>
+
+            <p class="text-sm text-white/80 leading-relaxed flex-grow">{item.summary}</p>
+
+            {/* Tags de tecnologías — máximo 6, sin interacción */}
             {item.technologies && item.technologies.length > 0 && (
-              <TrainingTech
-                title={item.title}
-                id={item.id}
-                technologies={item.technologies}
-                client:visible
-              />
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-mariner-800">
+                {item.technologies.slice(0, 6).map((tech: string) => (
+                  <span class="text-xs bg-mariner-800/60 text-mariner-300 px-2 py-0.5 rounded-md border border-mariner-700 font-medium">
+                    {tech}
+                  </span>
+                ))}
+                {item.technologies.length > 6 && (
+                  <span class="text-xs text-mariner-500 px-1 font-medium">
+                    +{item.technologies.length - 6} más
+                  </span>
+                )}
+              </div>
             )}
           </div>
-          <div class="px-6 pb-6">
+
+          {/* CTA */}
+          <div class="px-5 pb-5">
             <a
-              class="w-full py-2 px-4 bg-mariner-600 text-white rounded-md hover:bg-mariner-700 transition-colors duration-300 block text-center"
-              aria-label={`Learn more about ${item.title}`}
+              class="w-full py-2 px-4 bg-mariner-700/60 text-mariner-100 text-sm rounded-md hover:bg-mariner-600 border border-mariner-600 transition-colors duration-200 block text-center"
+              aria-label={`Más información sobre ${item.title}`}
               href={item.href}
               target="_blank"
+              rel="noopener noreferrer"
             >
               Más información
             </a>
