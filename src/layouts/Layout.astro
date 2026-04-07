@@ -15,7 +15,43 @@ import BackToTop from '../components/BackToTop.astro'
 		href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap"
 		rel="stylesheet"
 	  />
-		<title>Abraham Vilches de la Cruz</title>
+		<title>Abraham Vilches — Ingeniero de Software | DDD & Arquitecturas Limpias</title>
+
+		<!-- SEO -->
+		<meta name="description" content="Ingeniero de Software especializado en DDD, arquitecturas limpias y microservicios. Ayudo a equipos a reducir complejidad técnica sin sacrificar velocidad de producto." />
+		<link rel="canonical" href="https://abrahamvilches.com" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="Abraham Vilches — Ingeniero de Software | DDD & Arquitecturas Limpias" />
+		<meta property="og:description" content="Ingeniero de Software especializado en DDD, arquitecturas limpias y microservicios. Ayudo a equipos a reducir complejidad técnica sin sacrificar velocidad de producto." />
+		<meta property="og:image" content="https://abrahamvilches.com/IMG_0230.jpeg" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://abrahamvilches.com" />
+		<meta property="og:locale" content="es_ES" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Abraham Vilches — Ingeniero de Software | DDD & Arquitecturas Limpias" />
+		<meta name="twitter:description" content="Ingeniero de Software especializado en DDD, arquitecturas limpias y microservicios. Ayudo a equipos a reducir complejidad técnica sin sacrificar velocidad de producto." />
+		<meta name="twitter:image" content="https://abrahamvilches.com/IMG_0230.jpeg" />
+
+		<!-- Schema markup: Person -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Abraham Vilches de la Cruz",
+			"jobTitle": "Ingeniero de Software",
+			"url": "https://abrahamvilches.com",
+			"image": "https://abrahamvilches.com/IMG_0230.jpeg",
+			"sameAs": [
+				"https://github.com/AbrahamVilchesDeLaCruz",
+				"https://www.linkedin.com/in/abraham-vilches-de-la-cruz-295538175/",
+				"https://dddominio.com"
+			],
+			"knowsAbout": ["Domain-Driven Design", "Clean Architecture", "Microservicios", "React", "Node.js", "TypeScript", "Event-Driven Architecture"]
+		}
+		</script>
 	</head>
 	<body class="bg-black text-white min-h-screen flex flex-col">
 		<Navbar />

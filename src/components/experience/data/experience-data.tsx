@@ -37,9 +37,9 @@ export const experiences: Experience[] = [
     period: "Mayo 2025 - Actual",
     description: {
       backend:
-        "Refactorización progresiva de entornos legacy hacia DDD, definiendo nuevos contextos y APIs más mantenibles para acelerar la evolución del producto con menor riesgo técnico.",
+        "Lideré la migración progresiva de un entorno legacy a DDD en producción, definiendo bounded contexts y APIs que redujeron el tiempo de incorporación de nuevas features y el riesgo técnico en cada deploy.",
       frontend:
-        "Evolución del CRM hacia una arquitectura hexagonal en frontend, mejorando reutilización, aislamiento por contexto y velocidad de desarrollo.",
+        "Reescribí el CRM hacia arquitectura hexagonal en frontend, logrando aislamiento por contexto que mejoró la reutilización de componentes y aceleró el ciclo de desarrollo del equipo.",
     },
     backendTechnologies: [
       { name: "PostgreSQL", icon: <SiPostgresql className="text-4xl text-blue-500" /> },
@@ -52,8 +52,7 @@ export const experiences: Experience[] = [
       { name: "TailwindCSS", icon: <SiTailwindcss className="text-4xl text-mariner-400" /> },
       { name: "Vite", icon: <SiVite className="text-4xl text-purple-400" /> },
     ],
-    image:
-      "https://gdm-catalog-fmapi-prod.imgix.net/ProviderLogo/b5730ad9-3d42-4993-a5c9-e65cc58d26c2.png",
+    image: "/logos/devio-tech.png",
   },
   {
     role: "Software Developer",
@@ -61,9 +60,9 @@ export const experiences: Experience[] = [
     period: "Junio 2024 - Abril 2025",
     description: {
       backend:
-        "Diseño e implementación de APIs y microservicios con enfoque DDD y arquitectura orientada a eventos, priorizando escalabilidad, desacoplamiento y resiliencia operativa.",
+        "Diseñé e implementé microservicios con DDD y event-driven architecture usando RabbitMQ y NestJS, desacoplando dominios críticos y mejorando la resiliencia ante fallos en producción.",
       frontend:
-        "Desarrollo de interfaces en React alineadas con producto, mejorando claridad de uso y capacidad de iteración en distintos flujos del negocio.",
+        "Desarrollé interfaces React alineadas con los flows del producto, reduciendo fricción UX e iterando rápidamente con el equipo de producto sobre distintos casos de uso.",
     },
     backendTechnologies: [
       { name: "Symfony", icon: <FaSymfony className="text-4xl" /> },
@@ -80,8 +79,7 @@ export const experiences: Experience[] = [
       { name: "TailwindCSS", icon: <SiTailwindcss className="text-4xl text-mariner-400" /> },
       { name: "Vite", icon: <SiVite className="text-4xl text-purple-400" /> },
     ],
-    image:
-      "https://cdn.prod.website-files.com/5ec807c5d85901644b2db3b2/5fb637f59666baea40468771_logo_h.png",
+    image: "/logos/feeder.png",
   },
   {
     role: "Full Stack Developer",
@@ -89,9 +87,9 @@ export const experiences: Experience[] = [
     period: "Septiembre 2023 - Junio 2024",
     description: {
       backend:
-        "Desarrollo de APIs REST y comunicación en tiempo real con Flask, Python y MongoDB para soportar productos conectados con necesidades operativas exigentes.",
+        "Construí APIs REST y canales en tiempo real con Flask, Python y Socket.IO para soportar productos IoT conectados con alta exigencia operativa en entornos de monitorización continua.",
       frontend:
-        "Implementación de interfaces con React y Tailwind enfocadas en ofrecer flujos claros, mantenibles y adaptados a distintos casos de uso del producto.",
+        "Implementé interfaces React + Tailwind adaptadas a distintos perfiles de usuario, priorizando claridad operativa y mantenibilidad del código en un dominio técnicamente complejo.",
     },
     backendTechnologies: [
       { name: "Flask", icon: <SiFlask className="text-4xl text-white" /> },
@@ -106,6 +104,6 @@ export const experiences: Experience[] = [
         icon: <SiTailwindcss className="text-4xl text-mariner-400" />,
       },
     ],
-    image: "https://sensingtex.com/wp-content/uploads/2017/11/Logo-Sensingtex.png",
+    image: "/logos/sensing-tex.png",
   },
 ];
