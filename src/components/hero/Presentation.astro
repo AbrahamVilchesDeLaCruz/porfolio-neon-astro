@@ -1,54 +1,43 @@
 ---
 ---
 <div class="relative sm:border-2 sm:border-mariner-400 px-6 sm:px-8 py-2 sm:py-4 rounded-2xl sm:backdrop-blur-md sm:shadow-neon-blue flex flex-col gap-6 items-center justify-center text-center md:text-left w-full animate-fade-in sm:neon-presentation h-full">
-  {/* Nombre grande con glow sutil */}
-  <h1 class="name-title text-4xl md:text-6xl font-light text-mariner-200  mb-1 tracking-tight w-full">
+  {/* Nombre */}
+  <h1 class="name-title text-4xl md:text-6xl font-light text-mariner-200 mb-1 tracking-tight w-full">
     Abraham Vilches
   </h1>
 
-  {/* Rol con acento */}
-  <h2 class="name-title text-xl md:text-3xl font-light text-mariner-300  mb-3 tracking-wide w-full">
+  {/* Rol */}
+  <h2 class="name-title text-xl md:text-3xl font-light text-mariner-300 mb-3 tracking-wide w-full">
     Ingeniero de Software
   </h2>
 
   {/* Resumen profesional */}
   <p class="text-base/9 md:text-base/8 text-white/90 w-fit max-w-xs sm:max-w-fit text-center md:text-left tracking-wide">
     <span class="block mb-2">
-      🧱 Especializado en arquitecturas escalables y patrones de diseño.
+      🧱 Diseño arquitecturas escalables que convierten complejidad técnica en productos mantenibles y preparados para crecer.
     </span>
-    <span class="block mb-2">🏗️ Apasionado por DDD, microservicios y buenas prácticas.</span>
+    <span class="block mb-2">🏗️ Trabajo con DDD, microservicios y diseño estratégico para alinear decisiones técnicas con objetivos de negocio.</span>
     <span class="block">
-      💼 Experiencia full-stack con enfoque en soluciones que escalan con el negocio.
+      💼 Aporto una visión full-stack orientada a entregar software robusto, evolutivo y con impacto real en equipos y producto.
     </span>
   </p>
 
-  {/* Bloque de experiencia y habilidades */}
-  <div class="flex flex-col sm:flex-row w-full items-center gap-3 sm:gap-3 flex-wrap">
-    <div class="flex items-center justify-center w-fit bg-mariner-900/30 px-4 py-2 rounded-lg border border-mariner-600/50 mb-3 sm:mb-0">
-      <div class="flex flex-row items-center">
-        <span class="text-4xl font-bold text-mariner-400 leading-none">+2</span>
-        <div class="text-sm text-mariner-200 leading-tight ml-6">
-          <span class="block">años de</span>
-          <span class="block">experiencia</span>
-        </div>
-      </div>
-    </div>
-    <div class="w-fit max-w-sm sm:max-w-fit flex-1 flex flex-wrap items-center gap-1.5 justify-center">
-      {[
-        "Arquitecturas",
-        "DDD",
-        "Microservicios",
-        "React",
-        "Node.js",
-        "TDD",
-        "Event-driven Architecture",
-      ].map((tech) => (
-        <span
-          class="bg-mariner-800/70 text-mariner-200 px-1.5 py-0.5 rounded-md text-sm font-medium border border-mariner-600"
-        >
-          {tech}
-        </span>
-      ))}
-    </div>
+  {/* Tags de especialización */}
+  <div class="w-full flex flex-wrap items-center gap-1.5 justify-center md:justify-start">
+    {[
+      "Arquitecturas",
+      "DDD",
+      "Microservicios",
+      "React",
+      "Node.js",
+      "TDD",
+      "Event-driven Architecture",
+    ].map((tech) => (
+      <span
+        class="bg-mariner-800/70 text-mariner-200 px-2 py-0.5 rounded-md text-sm font-medium border border-mariner-600"
+      >
+        {tech}
+      </span>
+    ))}
   </div>
 </div>

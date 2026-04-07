@@ -107,7 +107,7 @@ export const ExperienceCardv1: React.FC<IExperienceCardProps> = ({ experience })
 
 export const ExperienceCard: React.FC<IExperienceCardProps> = ({ experience }) => {
   return (
-    <div className="bg-mariner-950 border-2 border-mariner-400 rounded-lg p-8 shadow-lg w-full max-w-md flex flex-col items-center">
+    <div className="bg-mariner-950 border-2 border-mariner-400 rounded-lg p-8 shadow-lg w-full max-w-xl flex flex-col items-center">
       <header className="flex items-center justify-around justify-items-cente p-6">
         <div className="w-2/3">
           <h3 className="text-xl font-semibold text-mariner-100">{experience.role}</h3>

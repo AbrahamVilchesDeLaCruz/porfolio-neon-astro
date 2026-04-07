@@ -16,7 +16,7 @@ export const trainingData: Training[] = [
     institution: "Universidad Autónoma de Barcelona",
     duration: "2019 - 2024",
     summary:
-      "Estudio integral de los fundamentos de la informática, principios de ingeniería de software y desarrollo práctico de aplicaciones.",
+      "Formación sólida en fundamentos de informática, ingeniería de software, algoritmia y diseño de sistemas, aplicada al desarrollo de soluciones mantenibles y escalables.",
     technologies: [
       "C++",
       "Bases de Datos",
@@ -39,7 +39,7 @@ export const trainingData: Training[] = [
     institution: "Lemoncode",
     duration: "2024",
     summary:
-      "Desarrollo frontend avanzado enfocado en React, TypeScript y prácticas modernas de desarrollo web.",
+      "Especialización intensiva en desarrollo frontend avanzado con foco en React, TypeScript, testing, tooling moderno y arquitecturas orientadas a producto.",
     technologies: [
       "React",
       "Next.js",
@@ -87,10 +87,22 @@ export const trainingData: Training[] = [
     institution: "Codely.tv",
     duration: "2024 - presente",
     summary:
-      "Formación especializada en arquitectura de software, código limpio y mejores prácticas de desarrollo.",
+      "Formación continua centrada en arquitectura de software, DDD, Clean Code y prácticas de ingeniería orientadas a construir sistemas de alta calidad.",
     technologies: ["Arquitectura Hexagonal", "DDD", "Clean Code", "TDD", "PHP", "Node.js"],
     image:
       "https://pathwright.imgix.net/https%3A%2F%2Fcdn.filestackcontent.com%2Fapi%2Ffile%2FmR8srLQXSBKaRuMl5KFA%3Fsignature%3D888b9ea3eb997a4d59215bfbe2983c636df3c7da0ff8c6f85811ff74c8982e34%26policy%3DeyJjYWxsIjogWyJyZWFkIiwgInN0YXQiLCAiY29udmVydCJdLCAiZXhwaXJ5IjogNDYyMDM3NzAzMX0%253D?fit=crop&ixlib=python-1.1.0&w=500&s=87426dd64cc495cb74a08a80cc63edb2",
     href: "https://codely.com/usuarios/abraham-vilches-zxOFk6",
+  },
+  {
+    id: 4,
+    title: "Master en Desarrollo con IA",
+    institution: "Big School",
+    duration: "2024 - presente",
+    summary:
+      "Programa orientado al diseño y desarrollo de soluciones con IA, integrando fundamentos de producto, automatización y aplicación práctica de capacidades inteligentes en software.",
+    technologies: ["IA", "LLMs", "Automatización", "Ingeniería de Prompts", "Agentes IA"],
+    image:
+      "https://thebigschool.com/wp-content/uploads/2024/05/BigSchool-Logo.svg",
+    href: "https://thebigschool.com",
   },
 ];

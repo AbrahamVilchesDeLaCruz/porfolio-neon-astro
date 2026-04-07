@@ -1,9 +1,11 @@
 ---
-import '../styles/global.css'  
+import '../styles/global.css'
+import Navbar from '../components/Navbar.astro'
+import BackToTop from '../components/BackToTop.astro'
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -16,9 +18,11 @@ import '../styles/global.css'
 		<title>Abraham Vilches de la Cruz</title>
 	</head>
 	<body class="bg-black text-white min-h-screen flex flex-col">
-		<main class="flex-grow overflow-y-auto">
+		<Navbar />
+		<main class="flex-grow">
 		  <slot />
 		</main>
+		<BackToTop />
 	</body>
 
 </html>
@@ -35,15 +39,15 @@ import '../styles/global.css'
     width: 8px;
   }
   main::-webkit-scrollbar-track {
-    background: #1f2937;
+    background: #1c478c;
   }
   main::-webkit-scrollbar-thumb {
-    background-color: #4f46e5;
+    background-color: #217bef;
     border-radius: 10px;
-    border: 2px solid #1f2937;
+    border: 2px solid #1c478c;
   }
   main {
     scrollbar-width: thin;
-    scrollbar-color: #4f46e5 #1f2937;
+    scrollbar-color: #217bef #1c478c;
   }
 </style>

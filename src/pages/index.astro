@@ -15,18 +15,18 @@ import Books from '../components/Books';
     <Hero />
   </div>
   <section id="experience">
-    <section class="py-16 text-white">
+    <div class="py-16 px-4 text-white">
       <SectionTitle title="Experiencia" />
       <Experience transition:persist client:visible/>
-    </section>
+    </div>
   </section>
   <section id="training"><TrainingSection /></section>
   <section id="projects"><Projects /></section>
   <section id="books">
-    <section class="mx-auto px-4 py-8">
+    <div class="py-20 px-4">
       <SectionTitle title="Biblioteca Personal" />
       <Books transition:persist client:visible/>
-    </section>
+    </div>
   </section>
   <section id="contact"><Contact /></section>
 </Layout>
