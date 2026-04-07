@@ -57,7 +57,7 @@ const Books: React.FC = () => {
         <div className="relative w-full flex items-center justify-center">
           <button
             onClick={prevSlide}
-            className="absolute bg-transparent left-0 z-10 p-2 rounded-full shadow-lg hover:bg-gray-100 transform -translate-x-1/2 top-1/2"
+            className="absolute bg-transparent left-2 z-10 p-2 rounded-full shadow-lg hover:bg-mariner-900/50 top-1/2 -translate-y-1/2"
           >
             <FaChevronLeft className="text-2xl text-mariner-400" />
           </button>
@@ -96,7 +96,7 @@ const Books: React.FC = () => {
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 z-10 bg-transparent p-2 rounded-full shadow-lg hover:bg-gray-100 transform translate-x-1/2 top-1/2"
+            className="absolute right-2 z-10 bg-transparent p-2 rounded-full shadow-lg hover:bg-mariner-900/50 top-1/2 -translate-y-1/2"
           >
             <FaChevronRight className="text-2xl text-mariner-400" />
           </button>
@@ -125,6 +125,9 @@ const Books: React.FC = () => {
               </div>
             ))}
           </div>
+          {!selectedBook && (
+            <p className="text-sm text-mariner-700 text-center mt-2">← Hacé clic en un libro para ver más →</p>
+          )}
 
           {selectedBook && (
             <div className="w-full md:max-w-2xl flex flex-col md:flex-row justify-center items-center h-auto bg-mariner-950 border-2 border-mariner-400 rounded-lg p-8 shadow-lg gap-4">

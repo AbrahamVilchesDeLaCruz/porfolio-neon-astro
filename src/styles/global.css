@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Cascadia Code", "Poppins", sans-serif;
   background-color: black; /* #0d0c0c; */

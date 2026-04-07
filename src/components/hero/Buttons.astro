@@ -1,28 +1,22 @@
 ---
-const row2 = "flex items-center justify-center text-sm sm:text-base font-semibold w-[80%] sm:w-[180px] px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white transition-all rounded-xl gap-2"
+const btnBase = "flex items-center justify-center font-semibold transition-all rounded-xl gap-2 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white text-sm px-5 py-2.5"
 ---
 
-<div class="flex flex-col items-center gap-4 w-full max-w-sm sm:max-w-md md:max-w-none mb-2 px-4 sm:px-0">
-  <!-- Fila 1: Sobre Mí arriba -->
-  <div class="w-full flex justify-center">
-    <a 
-      href="/CV-Abraham_Vilches_de_la_Cruz.pdf" 
-      download="Abraham_Vilches_de_la_Cruz"  
-      class="flex items-center justify-center font-semibold transition-all rounded-xl gap-2 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white text-sm px-4 py-2.5 w-[80%] sm:text-base sm:px-6 sm:py-3 sm:w-[180px]">
-      <span role="img" aria-label="CV">📥</span>
-      Sobre Mí
-    </a>
-  </div>
-
-  <!-- Fila 2: Proyectos y Blog -->
-  <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 w-full justify-center items-center">
-    <a href="#projects" class={row2}>
-      <span role="img" aria-label="Proyectos">🚀</span>
-      Proyectos
-    </a>
-    <a href="https://dddominio.com" class={row2} target="_blank" rel="noopener noreferrer">
-      <span role="img" aria-label="Blog">📒</span>
-      Blog
-    </a>
-  </div>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full px-4 sm:px-0">
+  <a
+    href="/CV-Abraham_Vilches_de_la_Cruz.pdf"
+    download="Abraham_Vilches_de_la_Cruz"
+    class={btnBase}
+  >
+    <span role="img" aria-label="CV">📥</span>
+    Sobre Mí
+  </a>
+  <a href="#projects" class={btnBase}>
+    <span role="img" aria-label="Proyectos">🚀</span>
+    Proyectos
+  </a>
+  <a href="https://dddominio.com" class={btnBase} target="_blank" rel="noopener noreferrer">
+    <span role="img" aria-label="Blog">📒</span>
+    Blog
+  </a>
 </div>

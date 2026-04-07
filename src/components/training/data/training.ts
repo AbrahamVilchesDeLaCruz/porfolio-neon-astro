@@ -102,7 +102,7 @@ export const trainingData: Training[] = [
       "Programa orientado al diseño y desarrollo de soluciones con IA, integrando fundamentos de producto, automatización y aplicación práctica de capacidades inteligentes en software.",
     technologies: ["IA", "LLMs", "Automatización", "Ingeniería de Prompts", "Agentes IA"],
     image:
-      "https://bigschool.ai/logo.png",
-    href: "https://bigschool.ai",
+      "https://thebigschool.com/wp-content/uploads/2024/05/BigSchool-Logo.svg",
+    href: "https://thebigschool.com",
   },
 ];
