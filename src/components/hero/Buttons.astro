@@ -1,36 +1,28 @@
 ---
-const primaryBtn = "flex items-center justify-center font-semibold transition-all rounded-xl gap-2 bg-mariner-500 text-white hover:bg-mariner-400 text-sm px-6 py-3 w-[80%] sm:text-base sm:w-[180px] shadow-neon border border-mariner-400"
-const secondaryBtn = "flex items-center justify-center text-sm sm:text-base font-semibold w-[80%] sm:w-[180px] px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white transition-all rounded-xl gap-2"
-const tertiaryBtn = "flex items-center justify-center text-sm font-medium w-[80%] sm:w-[180px] px-4 py-2 border border-mariner-700 bg-transparent text-mariner-500 hover:text-mariner-300 hover:border-mariner-500 transition-all rounded-xl gap-2"
+const row2 = "flex items-center justify-center text-sm sm:text-base font-semibold w-[80%] sm:w-[180px] px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white transition-all rounded-xl gap-2"
 ---
 
-<div class="flex flex-col items-center gap-3 w-full max-w-sm sm:max-w-md md:max-w-none mb-2 px-4 sm:px-0">
-  <!-- CTA Primario: Ver proyectos -->
+<div class="flex flex-col items-center gap-4 w-full max-w-sm sm:max-w-md md:max-w-none mb-2 px-4 sm:px-0">
+  <!-- Fila 1: Sobre Mí arriba -->
   <div class="w-full flex justify-center">
-    <a href="#projects" class={primaryBtn} aria-label="Ver proyectos">
-      Ver proyectos
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+    <a 
+      href="/CV-Abraham_Vilches_de_la_Cruz.pdf" 
+      download="Abraham_Vilches_de_la_Cruz"  
+      class="flex items-center justify-center font-semibold transition-all rounded-xl gap-2 border-2 border-mariner-400 bg-transparent text-mariner-400 hover:bg-mariner-400/10 hover:text-white text-sm px-4 py-2.5 w-[80%] sm:text-base sm:px-6 sm:py-3 sm:w-[180px]">
+      <span role="img" aria-label="CV">📥</span>
+      Sobre Mí
     </a>
   </div>
 
-  <!-- CTA Secundario: Descargar CV -->
-  <div class="w-full flex justify-center">
-    <a
-      href="/CV-Abraham_Vilches_de_la_Cruz.pdf"
-      download="Abraham_Vilches_de_la_Cruz"
-      class={secondaryBtn}
-      aria-label="Descargar CV de Abraham Vilches"
-    >
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5z"/></svg>
-      Descargar CV
+  <!-- Fila 2: Proyectos y Blog -->
+  <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 w-full justify-center items-center">
+    <a href="#projects" class={row2}>
+      <span role="img" aria-label="Proyectos">🚀</span>
+      Proyectos
     </a>
-  </div>
-
-  <!-- CTA Terciario: Blog -->
-  <div class="w-full flex justify-center">
-    <a href="https://dddominio.com" class={tertiaryBtn} target="_blank" rel="noopener noreferrer" aria-label="Ir al blog DDDominio (abre en nueva pestaña)">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-      Blog DDDominio
+    <a href="https://dddominio.com" class={row2} target="_blank" rel="noopener noreferrer">
+      <span role="img" aria-label="Blog">📒</span>
+      Blog
     </a>
   </div>
 </div>

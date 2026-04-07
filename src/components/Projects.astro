@@ -30,6 +30,7 @@ const projects: Project[] = [
     tech: ['Astro', 'Tailwind', 'Markdown'],
     github: '',
     live: 'https://dddominio.com',
+    liveLabel: 'Visitar web',
     status: 'production',
   },
   {
@@ -48,7 +49,7 @@ const projects: Project[] = [
     title: 'RocketShort',
     description: 'Co-fundé RocketShort para ayudar a negocios a validar y lanzar productos digitales con velocidad. Plataforma de desarrollo ágil orientada a resultados.',
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c',
-    tech: ['Producto', 'Estrategia Digital', 'Full-stack'],
+      tech: ['Producto', 'Estrategia Digital', 'FastAPI', 'Next.js', 'MongoDB'],
     github: '',
     live: 'https://rocketshort.com',
     liveLabel: 'Visitar web',
@@ -131,20 +132,25 @@ const projects: Project[] = [
           <div class="p-5 flex flex-col gap-3 flex-grow">
             <h3 class="text-lg font-semibold text-white">{project.title}</h3>
             <p class="text-sm text-gray-400 leading-relaxed flex-grow">{project.description}</p>
-            {/* Tags — máximo 4 visibles */}
+            {/* Tags — máximo 4 visibles, resto colapsados */}
             <ul class="flex flex-wrap gap-1.5 pt-2 border-t border-mariner-800" role="list" aria-label={`Tecnologías de ${project.title}`}>
-              {project.tech.slice(0, 4).map((tech) => (
-                <li>
+              {project.tech.map((tech, i) => (
+                <li class={i >= 4 ? 'hidden' : ''} data-extra={i >= 4 ? 'true' : undefined}>
                   <span class="px-2 py-0.5 text-xs bg-mariner-800/60 text-mariner-300 rounded-md border border-mariner-700 font-medium">
                     {tech}
                   </span>
                 </li>
               ))}
               {project.tech.length > 4 && (
-                <li>
-                  <span class="px-2 py-0.5 text-xs text-mariner-500 rounded-md font-medium">
+                <li data-toggle-tags>
+                  <button
+                    type="button"
+                    class="px-2 py-0.5 text-xs text-mariner-400 hover:text-mariner-200 rounded-md font-medium transition-colors cursor-pointer"
+                    aria-expanded="false"
+                    data-count={project.tech.length - 4}
+                  >
                     +{project.tech.length - 4} más
-                  </span>
+                  </button>
                 </li>
               )}
             </ul>
@@ -154,3 +160,4 @@ const projects: Project[] = [
     </div>
   </div>
 </section>
+

@@ -1,65 +1,63 @@
 ---
-import SectionTitle from './SectionTitle.astro';
 ---
-<footer class="text-white py-8 px-4 border-t border-mariner-900 pt-8">
-  <div class="container mx-auto px-4">
-    <SectionTitle title="Contacto" />
-    <div class="flex flex-col items-center justify-center space-y-6 mt-8">
+<footer class="border-t border-mariner-900 py-12 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="bg-mariner-950/40 border border-mariner-700 rounded-xl px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-8">
 
-      {/* CTA principal */}
-      <div class="text-center max-w-xl border border-mariner-700 rounded-2xl px-8 py-6 bg-mariner-950/40">
+      {/* Texto izquierda */}
+      <div class="flex flex-col gap-2 text-center sm:text-left">
         <p class="text-lg font-light text-mariner-200 leading-relaxed">
-          Si querés impulsar un producto, fortalecer su arquitectura o explorar una colaboración, estaré encantado de conversar.
+          Si quieres impulsar un producto, reforzar su arquitectura<br class="hidden sm:block" /> o explorar una colaboración, estaré encantado de conversar.
         </p>
-        <p class="mt-3 text-mariner-400 font-medium">
+        <p class="text-sm text-mariner-500">
           Disponible para proyectos freelance y posiciones senior.
         </p>
-        <a
-          href="mailto:abrahamvilchesdelacruz@gmail.com"
-          class="mt-5 inline-block text-mariner-300 hover:text-mariner-100 underline underline-offset-4 transition-colors duration-200 text-sm font-medium"
-          aria-label="Enviar email a Abraham Vilches"
-        >
-          abrahamvilchesdelacruz@gmail.com
-        </a>
-      </div>
-
-      {/* Redes sociales */}
-      <div class="flex items-center space-x-8">
-        <a
-          href="https://github.com/AbrahamVilchesDeLaCruz"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-mariner-400 transition-colors duration-300 flex flex-col items-center space-y-2"
-          aria-label="Perfil de GitHub de Abraham Vilches"
-        >
-          <svg class="text-2xl" fill="currentColor" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.588 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          <span class="text-sm">GitHub</span>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/abraham-vilches-de-la-cruz-295538175/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-mariner-400 transition-colors duration-300 flex flex-col items-center space-y-2"
-          aria-label="Perfil de LinkedIn de Abraham Vilches"
-        >
-          <svg class="text-2xl" fill="currentColor" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
-          <span class="text-sm">LinkedIn</span>
-        </a>
-        <a
-          href="mailto:abrahamvilchesdelacruz@gmail.com"
-          class="hover:text-mariner-400 transition-colors duration-300 flex flex-col items-center space-y-2"
-          aria-label="Enviar email a Abraham Vilches"
-        >
-          <svg class="text-2xl" fill="currentColor" viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><path d="M12 13.065l-11.985-8.065v16h23.97v-16zm11.985-9.065h-23.97l11.985 8.065z"/></svg>
-          <span class="text-sm">Email</span>
-        </a>
-      </div>
-
-      <div class="text-center text-sm text-gray-400 mt-4">
-        <p>
+        <p class="text-xs text-gray-600 mt-4">
           &copy; {new Date().getFullYear()} Abraham Vilches de la Cruz. Todos los derechos reservados.
         </p>
       </div>
+
+      {/* Derecha — email + redes */}
+      <div class="flex flex-col items-center sm:items-end gap-4 shrink-0">
+        <a
+          href="mailto:abrahamvilchesdelacruz@gmail.com"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 border-mariner-400 text-mariner-300 hover:bg-mariner-400/10 hover:text-white transition-all duration-200 text-sm font-semibold whitespace-nowrap"
+          aria-label="Enviar un email a Abraham Vilches"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 13.065l-11.985-8.065v16h23.97v-16zm11.985-9.065h-23.97l11.985 8.065z"/></svg>
+          abrahamvilchesdelacruz@gmail.com
+        </a>
+        <div class="flex items-center gap-5">
+          <a
+            href="https://github.com/AbrahamVilchesDeLaCruz"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-mariner-600 hover:text-mariner-400 transition-colors duration-200"
+            aria-label="Perfil de GitHub de Abraham Vilches"
+          >
+            <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.588 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/abraham-vilches-de-la-cruz-295538175/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-mariner-600 hover:text-mariner-400 transition-colors duration-200"
+            aria-label="Perfil de LinkedIn de Abraham Vilches"
+          >
+            <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+          </a>
+          <a
+            href="https://dddominio.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-mariner-600 hover:text-mariner-400 transition-colors duration-200 text-xs font-medium tracking-wide"
+            aria-label="Blog DDDominio sobre DDD y arquitectura"
+          >
+            DDDominio
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </footer>

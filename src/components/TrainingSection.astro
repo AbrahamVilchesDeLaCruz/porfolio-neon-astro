@@ -31,21 +31,26 @@ import { trainingData } from './training/data/training';
 
             <p class="text-sm text-white/80 leading-relaxed flex-grow">{item.summary}</p>
 
-            {/* Tags de tecnologías — máximo 6, sin interacción */}
+            {/* Tags de tecnologías — máximo 6 visibles, resto colapsados */}
             {item.technologies && item.technologies.length > 0 && (
               <ul class="flex flex-wrap gap-1.5 pt-2 border-t border-mariner-800" role="list" aria-label={`Tecnologías de ${item.title}`}>
-                {item.technologies.slice(0, 6).map((tech: string) => (
-                  <li>
+                {item.technologies.map((tech: string, i: number) => (
+                  <li class={i >= 6 ? 'hidden' : ''} data-extra={i >= 6 ? 'true' : undefined}>
                     <span class="text-xs bg-mariner-800/60 text-mariner-300 px-2 py-0.5 rounded-md border border-mariner-700 font-medium">
                       {tech}
                     </span>
                   </li>
                 ))}
                 {item.technologies.length > 6 && (
-                  <li>
-                    <span class="text-xs text-mariner-500 px-1 font-medium">
+                  <li data-toggle-tags>
+                    <button
+                      type="button"
+                      class="px-2 py-0.5 text-xs text-mariner-400 hover:text-mariner-200 rounded-md font-medium transition-colors cursor-pointer"
+                      aria-expanded="false"
+                      data-count={item.technologies.length - 6}
+                    >
                       +{item.technologies.length - 6} más
-                    </span>
+                    </button>
                   </li>
                 )}
               </ul>
@@ -69,3 +74,4 @@ import { trainingData } from './training/data/training';
     </div>
   </div>
 </section>
+

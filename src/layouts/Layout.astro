@@ -59,6 +59,26 @@ import BackToTop from '../components/BackToTop.astro'
 		  <slot />
 		</main>
 		<BackToTop />
+		<script>
+		  document.addEventListener('click', (e) => {
+		    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-toggle-tags] button');
+		    if (!btn) return;
+
+		    const list = btn.closest('ul');
+		    if (!list) return;
+
+		    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+		    const extraItems = list.querySelectorAll<HTMLLIElement>('li[data-extra="true"]');
+		    const count = Number(btn.dataset.count);
+
+		    extraItems.forEach((item) => {
+		      item.classList.toggle('hidden', isExpanded);
+		    });
+
+		    btn.setAttribute('aria-expanded', String(!isExpanded));
+		    btn.textContent = isExpanded ? `+${count} más` : 'Ver menos';
+		  });
+		</script>
 	</body>
 
 </html>
