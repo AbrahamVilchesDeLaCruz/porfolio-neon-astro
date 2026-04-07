@@ -37,9 +37,9 @@ export const experiences: Experience[] = [
     period: "Mayo 2025 - Actual",
     description: {
       backend:
-        "Refactorización de arquitectura legacy a Domain Driven Design, implementación de nuevos contextos facilitando la agilidad y flexibilidad del código. Permitiendo crecer de manera segura con el producto. Mantenimiento e implementación de API HTTP y sistemas de cron service. Además de comunicación por hooks de PostgreSQL.",
+        "Refactorización progresiva de entornos legacy hacia DDD, definiendo nuevos contextos y APIs más mantenibles para acelerar la evolución del producto con menor riesgo técnico.",
       frontend:
-        "Mantenimiento y refactorización del cliente CRM, pasando de una arquitectura por tipos a una hexagonal, permitiendo reutilización y desarrollo por contextos.",
+        "Evolución del CRM hacia una arquitectura hexagonal en frontend, mejorando reutilización, aislamiento por contexto y velocidad de desarrollo.",
     },
     backendTechnologies: [
       { name: "PostgreSQL", icon: <SiPostgresql className="text-4xl text-blue-500" /> },
@@ -61,9 +61,9 @@ export const experiences: Experience[] = [
     period: "Junio 2024 - Abril 2025",
     description: {
       backend:
-        "Diseño y desarrollo de soluciones completas siguiendo principios de arquitectura limpia (DDD) y patrones de Event-Driven Architecture. Implementación de APIs escalables y microservicios, garantizando robustez y flexibilidad.",
+        "Diseño e implementación de APIs y microservicios con enfoque DDD y arquitectura orientada a eventos, priorizando escalabilidad, desacoplamiento y resiliencia operativa.",
       frontend:
-        "Diseño y desarrollo de interfaces de usuario modernas y dinámicas con React, mejorando la experiencia del usuario en diversos productos.",
+        "Desarrollo de interfaces en React alineadas con producto, mejorando claridad de uso y capacidad de iteración en distintos flujos del negocio.",
     },
     backendTechnologies: [
       { name: "Symfony", icon: <FaSymfony className="text-4xl" /> },
@@ -89,9 +89,9 @@ export const experiences: Experience[] = [
     period: "Septiembre 2023 - Junio 2024",
     description: {
       backend:
-        "Desarrollo de APIs RESTful y APIs Socket con Flask y Python, usado MongoDB cómo base de datos NoSQL",
+        "Desarrollo de APIs REST y comunicación en tiempo real con Flask, Python y MongoDB para soportar productos conectados con necesidades operativas exigentes.",
       frontend:
-        "Diseño y desarrollo de interfaces de usuario modernas y dinámicas con React y Tailwind mejorando la experiencia del usuario en diversos productos.",
+        "Implementación de interfaces con React y Tailwind enfocadas en ofrecer flujos claros, mantenibles y adaptados a distintos casos de uso del producto.",
     },
     backendTechnologies: [
       { name: "Flask", icon: <SiFlask className="text-4xl text-white" /> },
