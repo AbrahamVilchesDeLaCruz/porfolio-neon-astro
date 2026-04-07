@@ -31,7 +31,7 @@ export const ExperienceTimelineItem = ({ experience }: Props) => {
   return (
     <>
       {/* ── DESKTOP ── */}
-      <div className="hidden md:flex flex-col bg-mariner-950/40 border border-mariner-700 hover:border-mariner-400 rounded-xl overflow-hidden transition-colors duration-300">
+      <div className="hidden md:flex flex-col h-full bg-mariner-950/40 border border-mariner-700 hover:border-mariner-400 rounded-xl overflow-hidden transition-colors duration-300">
 
         {/* Banda superior — frontend → izquierda */}
         <div className="border-b border-mariner-800 bg-mariner-950/60">

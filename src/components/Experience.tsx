@@ -4,9 +4,9 @@ import { ExperienceTimelineItem } from "./experience/ExperienceTimelineItem";
 const Experience: React.FC = () => {
   return (
     <div
-      className="w-full max-w-5xl mx-auto px-4"
+      className="w-full max-w-7xl mx-auto px-4"
     >
-      <div className="flex flex-col gap-4 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
         {experiences.map((experience, index) => (
           <ExperienceTimelineItem key={index} experience={experience} index={index} />
         ))}
