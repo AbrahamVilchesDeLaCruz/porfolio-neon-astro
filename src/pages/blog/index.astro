@@ -13,23 +13,63 @@ const sortedPosts = posts.sort(
   title="Desde la Capa de Dominio — Arquitectura y software de calidad"
   description="Un blog técnico sobre DDD, clean architecture, diseño de sistemas y experiencias reales en proyectos de software. Por Abraham Vilches."
 >
-  <main class="space-y-12">
+  <main class="relative z-10 space-y-16">
 
-    <!-- Hero minimalista -->
-    <section class="space-y-2">
+    <!-- Hero -->
+    <section class="space-y-3">
       <h1 class="font-mono text-3xl font-semibold text-indigo-400">
         Desde la Capa de Dominio
       </h1>
-      <p class="text-white/50 text-sm">
-        Diseño estratégico, arquitectura y decisiones técnicas que importan.
+      <p class="text-white/60 text-base max-w-2xl">
+        Un espacio para pensar el software antes de escribirlo. Diseño intencional, arquitectura alineada al dominio y decisiones técnicas que importan.
+        <span class="text-white/30"> — Por Abraham Vilches</span>
       </p>
     </section>
 
-    <!-- Todos los artículos -->
+    <!-- Sobre DDDominio -->
+    <section class="space-y-4">
+      <div class="space-y-2">
+        <p class="font-mono text-xs text-indigo-400/70 uppercase tracking-widest">🧭 Una plataforma para diseñar con propósito</p>
+        <p class="text-white/50 text-sm max-w-2xl leading-relaxed">
+          DDDominio nace con la intención de divulgar ideas, principios y estrategias para construir sistemas de software con calidad e intención desde una mirada crítica y bien fundamentada.
+          Aquí hablamos de diseño centrado en el negocio, modelado de dominios, calidad interna, decisiones técnicas justificadas y arquitectura como conversación, no como receta.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+        <div class="border border-white/10 rounded p-4 space-y-1">
+          <p class="font-mono text-sm text-indigo-400">🎯 Diseño con intención</p>
+          <p class="text-white/40 text-xs leading-relaxed">No todo se resuelve con código. Diseñar es decidir: qué construimos, por qué, y cómo se adapta al dominio.</p>
+        </div>
+        <div class="border border-white/10 rounded p-4 space-y-1">
+          <p class="font-mono text-sm text-indigo-400">🏗️ Pensamiento arquitectónico</p>
+          <p class="text-white/40 text-xs leading-relaxed">Exploramos cómo estructurar sistemas desde la comprensión del negocio, aplicando patrones que conectan intención con ejecución.</p>
+        </div>
+        <div class="border border-white/10 rounded p-4 space-y-1">
+          <p class="font-mono text-sm text-indigo-400">📐 Fundamentos técnicos</p>
+          <p class="text-white/40 text-xs leading-relaxed">SOLID, diseño orientado a objetos, codebase sostenible y decisiones técnicas explicadas sin dogma ni atajos.</p>
+        </div>
+        <div class="border border-white/10 rounded p-4 space-y-1">
+          <p class="font-mono text-sm text-indigo-400">🛠️ Ingeniería desde la trinchera</p>
+          <p class="text-white/40 text-xs leading-relaxed">Reflexiones desde la práctica: decisiones reales en productos reales, contadas desde dentro y sin vender humo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
     <section class="space-y-6">
+      <div class="space-y-1">
+        <h2 class="font-mono text-lg text-indigo-400">📓 Desde la Capa de Dominio</h2>
+        <p class="text-white/40 text-xs max-w-xl leading-relaxed">
+          El blog técnico de DDDominio, donde comparto ideas sobre diseño estratégico, decisiones de arquitectura y código con sentido. Escrito desde la experiencia, con ejemplos reales y visión a largo plazo.
+        </p>
+      </div>
+
+      <p class="font-mono text-xs text-white/30 uppercase tracking-widest">📚 Últimos artículos</p>
+
       <ul class="space-y-6">
         {
-          sortedPosts.map((post) => (
+          sortedPosts.slice(0, 3).map((post) => (
             <li class="border-b border-white/10 pb-6">
               <a
                 href={`/blog/${post.id}/`}
@@ -53,6 +93,10 @@ const sortedPosts = posts.sort(
           ))
         }
       </ul>
+
+      <a href="/blog/all" class="font-mono text-xs text-indigo-400/60 hover:text-indigo-400 transition-colors">
+        → Ver todos los artículos
+      </a>
     </section>
 
   </main>

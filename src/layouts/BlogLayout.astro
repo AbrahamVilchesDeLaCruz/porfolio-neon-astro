@@ -1,5 +1,13 @@
 ---
 import '../styles/global.css'
+import {
+  siTypescript, siJavascript, siNodedotjs, siPostgresql,
+  siDocker, siGit, siReact, siAstro, siRabbitmq,
+  siAngular, siNestjs, siGraphql, siPrisma, siRedis,
+  siMongodb, siKubernetes, siGithubactions, siVite,
+  siVitest, siJest, siRust, siGo, siDeno, siBun,
+  siNginx, siTerraform, siLinux, siSvelte, siExpress,
+} from 'simple-icons'
 
 interface Props {
   title?: string
@@ -14,6 +22,18 @@ const {
   header = 'Abraham Vilches',
   headerRef = '/',
 } = Astro.props
+
+const techIcons = [
+  siTypescript, siJavascript, siNodedotjs, siPostgresql,
+  siDocker, siGit, siReact, siAstro, siRabbitmq,
+  siAngular, siNestjs, siGraphql, siPrisma, siRedis,
+  siMongodb, siKubernetes, siGithubactions, siVite,
+  siVitest, siJest, siRust, siGo, siDeno, siBun,
+  siNginx, siTerraform, siLinux, siSvelte, siExpress,
+].map(icon => ({
+  svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="${icon.path}"/></svg>`,
+  hex: icon.hex,
+}))
 ---
 
 <!doctype html>
@@ -35,15 +55,19 @@ const {
   </head>
 
   <body class="flex min-h-screen flex-col bg-black text-white">
+    <!-- Fondo animado: iconos flotantes -->
+    <script id="tech-icons-data" type="application/json" set:html={JSON.stringify(techIcons)} />
     <!-- Header fijo -->
     <header
-      class="fixed top-0 z-50 flex w-full items-center justify-between border-b border-white/10 bg-black px-6 py-4 text-sm text-white/50 backdrop-blur"
+      class="fixed top-0 z-50 flex w-full items-center justify-between border-b border-white/10 bg-black px-4 sm:px-6 py-4 text-sm text-white/50 backdrop-blur"
     >
       <a
         href={headerRef}
-        class="text-lg font-semibold text-indigo-400 hover:text-white"
+        class="text-base sm:text-lg font-semibold text-indigo-400 hover:text-white"
       >{header}</a>
-      <nav class="space-x-4">
+
+      <!-- Nav desktop -->
+      <nav class="hidden sm:flex space-x-4">
         <a href="/blog" class="hover:text-white">Blog</a>
         <a
           href="https://www.linkedin.com/in/abraham-vilches-de-la-cruz-295538175/"
@@ -58,10 +82,43 @@ const {
           class="hover:text-white">GitHub</a
         >
       </nav>
+
+      <!-- Hamburger mobile -->
+      <button
+        id="menu-toggle"
+        class="sm:hidden flex flex-col gap-1.5 p-1"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <span class="block h-0.5 w-5 bg-white/60"></span>
+        <span class="block h-0.5 w-5 bg-white/60"></span>
+        <span class="block h-0.5 w-5 bg-white/60"></span>
+      </button>
     </header>
 
+    <!-- Nav mobile desplegable -->
+    <nav
+      id="mobile-menu"
+      class="fixed top-[57px] left-0 z-40 hidden w-full flex-col border-b border-white/10 bg-black px-4 py-4 text-sm text-white/60 sm:hidden"
+    >
+      <a href="/blog" class="py-2 hover:text-white">Blog</a>
+      <a
+        href="https://www.linkedin.com/in/abraham-vilches-de-la-cruz-295538175/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="py-2 hover:text-white">LinkedIn</a
+      >
+      <a
+        href="https://github.com/AbrahamVilchesDeLaCruz"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="py-2 hover:text-white">GitHub</a
+      >
+    </nav>
+
     <!-- Contenido -->
-    <main class="mx-auto max-w-3xl flex-1 px-4 py-10 pt-20">
+    <main class="relative z-10 mx-auto w-full max-w-3xl flex-1 px-4 sm:px-6 py-8 pt-20">
+      <div class="absolute inset-0 -z-10 rounded-xl bg-black/70" />
       <slot />
     </main>
 
@@ -98,6 +155,107 @@ const {
       })
     </script>
 
+    <!-- Animación de fondo: iconos tech flotantes (solo desktop) -->
+    <script>
+      ;(function () {
+        // Hamburger menu (siempre activo)
+        var toggle = document.getElementById('menu-toggle')
+        var menu = document.getElementById('mobile-menu')
+        if (toggle && menu) {
+          toggle.addEventListener('click', function () {
+            var isOpen = menu.classList.toggle('hidden')
+            menu.style.display = isOpen ? 'none' : 'flex'
+            toggle.setAttribute('aria-expanded', String(!isOpen))
+          })
+        }
+
+        // Animación solo en desktop
+        if (window.innerWidth < 640) return
+
+        var raw = document.getElementById('tech-icons-data')
+        if (!raw) return
+        var ICONS = JSON.parse(raw.textContent || '[]')
+
+        var COUNT = ICONS.length
+        var W = window.innerWidth
+        var H = window.innerHeight
+        var cols = Math.ceil(Math.sqrt(COUNT * W / H))
+        var rows = Math.ceil(COUNT / cols)
+        var cellW = W / cols
+        var cellH = H / rows
+        var particles = []
+
+        ICONS.forEach(function (icon, i) {
+          var size = 52 + Math.floor(Math.random() * 36)
+          var wrapper = document.createElement('div')
+          wrapper.innerHTML = icon.svg
+          var svg = wrapper.querySelector('svg')
+          svg.setAttribute('width', String(size))
+          svg.setAttribute('height', String(size))
+          svg.style.cssText = [
+            'position:fixed',
+            'top:0',
+            'left:0',
+            'pointer-events:none',
+            'z-index:0',
+            'will-change:transform,opacity',
+            'fill:#' + icon.hex,
+            'filter:drop-shadow(0 0 6px #' + icon.hex + 'aa)',
+          ].join(';')
+          document.body.appendChild(svg)
+
+          var col = i % cols
+          var row = Math.floor(i / cols)
+          particles.push({
+            el: svg,
+            x: col * cellW + Math.random() * (cellW * 0.5),
+            y: row * cellH + Math.random() * (cellH * 0.5),
+            vx: (Math.random() - 0.5) * 0.7,
+            vy: (Math.random() - 0.5) * 0.7,
+            opacity: Math.random() * 0.2 + 0.15,
+            dOpacity: (Math.random() - 0.5) * 0.001,
+          })
+        })
+
+        function tick() {
+          var W2 = window.innerWidth
+          var H2 = window.innerHeight
+          var FADE = 120
+
+          for (var i = 0; i < particles.length; i++) {
+            var p = particles[i]
+            p.x += p.vx
+            p.y += p.vy
+            p.opacity += p.dOpacity
+            if (p.opacity > 0.35) p.dOpacity = -Math.abs(p.dOpacity)
+            if (p.opacity < 0.08) p.dOpacity = Math.abs(p.dOpacity)
+
+            var fadeX = 1
+            if (p.x < FADE) fadeX = Math.max(0, p.x / FADE)
+            else if (p.x > W2 - FADE) fadeX = Math.max(0, (W2 - p.x) / FADE)
+
+            var fadeY = 1
+            if (p.y < FADE) fadeY = Math.max(0, p.y / FADE)
+            else if (p.y > H2 - FADE) fadeY = Math.max(0, (H2 - p.y) / FADE)
+
+            var edgeFade = Math.min(fadeX, fadeY)
+
+            if (edgeFade <= 0) {
+              if (p.x < 0) p.x = W2
+              else if (p.x > W2) p.x = 0
+              if (p.y < 0) p.y = H2
+              else if (p.y > H2) p.y = 0
+            }
+
+            p.el.style.transform = 'translate(' + p.x + 'px,' + p.y + 'px)'
+            p.el.style.opacity = String(p.opacity * edgeFade)
+          }
+          requestAnimationFrame(tick)
+        }
+
+        requestAnimationFrame(tick)
+      })()
+    </script>
     <!-- Footer -->
     <footer
       class="flex flex-col gap-4 border-t border-white/10 px-4 py-6 text-center text-sm text-white/50"

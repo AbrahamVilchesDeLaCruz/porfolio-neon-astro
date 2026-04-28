@@ -1,0 +1,56 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro'
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+
+const posts: CollectionEntry<'blog'>[] = await getCollection('blog')
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+---
+
+<BlogLayout
+  title="Todos los artículos — Desde la Capa de Dominio"
+  description="Todos los artículos del blog técnico de DDDominio sobre DDD, clean architecture, diseño de sistemas y decisiones técnicas."
+>
+  <main class="relative z-10 space-y-10">
+
+    <section class="space-y-2">
+      <a href="/blog/" class="font-mono text-xs text-indigo-400/50 hover:text-indigo-400 transition-colors">
+        ← Volver al inicio
+      </a>
+      <h1 class="font-mono text-2xl font-semibold text-indigo-400">
+        Todos los artículos
+      </h1>
+      <p class="text-white/40 text-sm">{sortedPosts.length} artículos publicados</p>
+    </section>
+
+    <ul class="space-y-6">
+      {
+        sortedPosts.map((post) => (
+          <li class="border-b border-white/10 pb-6">
+            <a
+              href={`/blog/${post.id}/`}
+              class="text-lg font-semibold text-indigo-400 hover:underline"
+            >
+              {post.data.title}
+            </a>
+            <p class="mt-1 text-sm text-white/60">{post.data.description}</p>
+            <div class="mt-2 flex flex-wrap items-center gap-4">
+              <time class="font-mono text-xs text-white/40">
+                {post.data.pubDate.toLocaleDateString('es-ES')}
+              </time>
+              {post.data.tags &&
+                post.data.tags.map((tag) => (
+                  <span class="font-mono text-xs border border-indigo-400/30 text-indigo-400 px-2 py-0.5 rounded">
+                    {tag}
+                  </span>
+                ))}
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+
+  </main>
+</BlogLayout>
