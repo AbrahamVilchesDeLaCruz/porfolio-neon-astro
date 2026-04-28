@@ -2,6 +2,18 @@
 import '../styles/global.css'
 import Navbar from '../components/Navbar.astro'
 import BackToTop from '../components/BackToTop.astro'
+
+interface Props {
+  title?: string
+  description?: string
+  canonical?: string
+}
+
+const {
+  title = 'Abraham Vilches — Ingeniero de Software | DDD & Arquitecturas Limpias',
+  description = 'Ingeniero de Software especializado en DDD, arquitecturas limpias y microservicios. Ayudo a equipos a reducir complejidad técnica sin sacrificar velocidad de producto.',
+  canonical = 'https://abrahamvilches.com',
+} = Astro.props
 ---
 
 <!doctype html>
@@ -15,11 +27,11 @@ import BackToTop from '../components/BackToTop.astro'
 		href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap"
 		rel="stylesheet"
 	  />
-		<title>Abraham Vilches — Ingeniero de Software | DDD & Arquitecturas Limpias</title>
+		<title>{title}</title>
 
 		<!-- SEO -->
-		<meta name="description" content="Ingeniero de Software especializado en DDD, arquitecturas limpias y microservicios. Ayudo a equipos a reducir complejidad técnica sin sacrificar velocidad de producto." />
-		<link rel="canonical" href="https://abrahamvilches.com" />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
 
 		<!-- Open Graph -->
 		<meta property="og:title" content="Abraham Vilches — Ingeniero de Software | DDD & Arquitecturas Limpias" />

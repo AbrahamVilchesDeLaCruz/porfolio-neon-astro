@@ -1,0 +1,100 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro'
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+
+const posts: CollectionEntry<'blog'>[] = await getCollection('blog')
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+const latestPosts = sortedPosts.slice(0, 3)
+---
+
+<BlogLayout
+  title="Desde la Capa de Dominio — Arquitectura y software de calidad"
+  description="Un blog técnico sobre DDD, clean architecture, diseño de sistemas y experiencias reales en proyectos de software. Por Abraham Vilches."
+>
+  <main class="space-y-14">
+
+    <!-- Hero -->
+    <section class="space-y-4 text-center">
+      <h1
+        class="bg-gradient-to-r from-indigo-400 via-purple-500 to-indigo-400 bg-clip-text text-5xl leading-tight font-extrabold text-transparent"
+      >
+        DDDominio
+      </h1>
+      <p class="mx-auto max-w-2xl text-lg text-white/70 leading-relaxed">
+        Un espacio para pensar el software antes de escribirlo. Diseño intencional, arquitectura alineada al dominio y decisiones técnicas que importan.
+        Por <a href="https://abrahamvilches.com" class="text-indigo-400 hover:text-white transition">Abraham Vilches</a>.
+      </p>
+    </section>
+
+    <!-- Presentación -->
+    <section class="space-y-6">
+      <p class="text-white/70 leading-relaxed">
+        DDDominio nace con la intención de divulgar ideas, principios y estrategias para construir sistemas de software con calidad e intención desde una mirada crítica y bien fundamentada.
+      </p>
+      <p class="text-white/70 leading-relaxed">
+        Aquí hablamos de diseño centrado en el negocio, modelado de dominios, calidad interna, decisiones técnicas justificadas y arquitectura como conversación, no como receta.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+        <div class="border border-white/10 rounded-lg p-4 space-y-1">
+          <p class="text-white font-semibold">🎯 Diseño con intención</p>
+          <p class="text-white/60 text-sm leading-relaxed">No todo se resuelve con código. Diseñar es decidir: qué construimos, por qué, y cómo se adapta al dominio.</p>
+        </div>
+        <div class="border border-white/10 rounded-lg p-4 space-y-1">
+          <p class="text-white font-semibold">🏗️ Pensamiento arquitectónico</p>
+          <p class="text-white/60 text-sm leading-relaxed">Exploramos cómo estructurar sistemas desde la comprensión del negocio, aplicando patrones que conectan intención con ejecución.</p>
+        </div>
+        <div class="border border-white/10 rounded-lg p-4 space-y-1">
+          <p class="text-white font-semibold">📐 Fundamentos técnicos</p>
+          <p class="text-white/60 text-sm leading-relaxed">SOLID, diseño orientado a objetos, codebase sostenible y decisiones técnicas explicadas sin dogma ni atajos.</p>
+        </div>
+        <div class="border border-white/10 rounded-lg p-4 space-y-1">
+          <p class="text-white font-semibold">🛠️ Ingeniería desde la trinchera</p>
+          <p class="text-white/60 text-sm leading-relaxed">Reflexiones desde la práctica: decisiones reales en productos reales, contadas desde dentro y sin vender humo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Desde la Capa de Dominio -->
+    <section class="border border-indigo-900/60 rounded-lg p-6 space-y-2 bg-indigo-950/20">
+      <p class="text-white font-semibold text-lg">📓 Desde la Capa de Dominio</p>
+      <p class="text-white/60 text-sm leading-relaxed">
+        El blog técnico de DDDominio, donde comparto ideas sobre diseño estratégico, decisiones de arquitectura y código con sentido.
+        Escrito desde la experiencia, con ejemplos reales y visión a largo plazo.
+      </p>
+    </section>
+
+    <!-- Últimos artículos -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-semibold">📚 Últimos artículos</h2>
+      <ul class="space-y-4">
+        {
+          latestPosts.map((post) => (
+            <li class="border-b border-white/10 pb-4">
+              <a
+                href={`/blog/${post.id}/`}
+                class="text-xl font-semibold text-indigo-400 hover:underline"
+              >
+                {post.data.title}
+              </a>
+              <p class="text-sm text-white/60">{post.data.description}</p>
+              <time class="text-xs text-white/40">
+                {post.data.pubDate.toLocaleDateString('es-ES')}
+              </time>
+            </li>
+          ))
+        }
+      </ul>
+      <a
+        href="/blog/archivo"
+        class="inline-block text-sm text-indigo-400 hover:text-white transition"
+      >
+        → Ver todos los artículos
+      </a>
+    </section>
+
+  </main>
+</BlogLayout>
