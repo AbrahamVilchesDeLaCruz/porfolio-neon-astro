@@ -1,7 +1,7 @@
 ---
 title: "Lo que la IA no te hace"
 description: "La IA puede apagar fuegos, pero no acabar con el incendio. Sobre el pensamiento a largo plazo en ingeniería de software y el patrón Criteria como ejemplo de diseño sostenible."
-pubDate: 2025-04-28
+pubDate: 2025-02-17
 tags: ["IA", "Patrones de Diseño", "Criteria", "Clean Architecture", "DDD", "Ingeniería de Software"]
 ---
 

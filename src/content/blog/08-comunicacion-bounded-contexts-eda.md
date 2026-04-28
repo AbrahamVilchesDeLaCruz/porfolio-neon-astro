@@ -1,7 +1,7 @@
 ---
 title: "Comunicación entre Bounded Contexts en Code Finances (EDA en acción)"
 description: "Cómo se comunican los distintos Bounded Contexts en Code Finances usando Event Driven Architecture: desacoplamiento, naming de eventos y flujos reales con RabbitMQ."
-pubDate: 2025-04-28
+pubDate: 2025-04-14
 tags: ["Event-Driven Architecture", "DDD", "Bounded Contexts", "RabbitMQ", "Code Finances", "Microservicios"]
 ---
 
@@ -50,6 +50,38 @@ eventBus.publish(new RevenueCreatedEvent(...))
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-top:1rem;">
   Un contexto <strong>publica eventos</strong> cuando cambia su estado. Otros contextos <strong>escuchan y reaccionan</strong>. Nadie depende directamente de nadie.
 </p>
+
+```mermaid
+flowchart LR
+    subgraph CF[Cash Flow BC]
+        UC[CreateRevenue\nUseCase]
+        UC -->|emite| EV[RevenueCreatedEvent]
+    end
+
+    EV -->|publica| RMQ[RabbitMQ]
+
+    subgraph LC[Liquidity Categories BC]
+        S1[AllocateLiquidity\nSubscriber]
+    end
+
+    subgraph EQ[Equity BC]
+        S2[UpdateEquity\nSubscriber]
+    end
+
+    subgraph PR[Projections BC]
+        S3[RecalcProjections\nSubscriber]
+    end
+
+    RMQ -->|consume| S1
+    RMQ -->|consume| S2
+    RMQ -->|consume| S3
+
+    style CF fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
+    style LC fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
+    style EQ fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
+    style PR fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
+    style RMQ fill:#0f172a,stroke:#818cf8,color:#e0e7ff
+```
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />
 

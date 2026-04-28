@@ -1,7 +1,7 @@
 ---
 title: "PostgreSQL como cola de mensajería? Depende."
 description: "Reflexiones sobre cuándo usar PostgreSQL como event bus, cómo implementarlo con dos tablas y cómo se relaciona con las transacciones en sistemas con arquitectura orientada a eventos."
-pubDate: 2025-04-28
+pubDate: 2025-02-03
 tags: ["Event-Driven Architecture", "PostgreSQL", "DDD", "Clean Architecture", "SOLID", "Infraestructura"]
 ---
 
@@ -62,6 +62,25 @@ tags: ["Event-Driven Architecture", "PostgreSQL", "DDD", "Clean Architecture", "
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-top:1rem;">
   Cuando se levanta la app, se asigna un <strong>worker</strong> que va haciendo consultas a la tabla de eventos y consumiendo lo que se va creando. Desde ahí, es el funcionamiento típico de un bus: el publisher publica los eventos de dominio y los consumers los van ejecutando mediante los subscribers para los casos de uso derivados.
 </p>
+
+```mermaid
+flowchart TD
+    UC[Use Case] -->|publica| EB[Event Bus]
+    EB -->|inserta| EV[(domain_events)]
+    EV -->|referencia| SR[(event_subscribers)]
+    W[Worker] -->|poll + SKIP LOCKED| EV
+    W -->|ejecuta| S1[Subscriber A]
+    W -->|ejecuta| S2[Subscriber B]
+    S1 -->|marca procesado| EV
+    S2 -->|marca procesado| EV
+    EV -->|fallo → retry| W
+    EV -->|max retries| DL[(dead_letter)]
+
+    style EV fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
+    style SR fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
+    style DL fill:#3b0764,stroke:#a855f7,color:#f3e8ff
+    style W fill:#0f172a,stroke:#818cf8,color:#e0e7ff
+```
 
 <br />
 

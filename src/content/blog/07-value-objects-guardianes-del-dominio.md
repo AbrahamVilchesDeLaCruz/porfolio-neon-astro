@@ -1,7 +1,7 @@
 ---
 title: "Value Objects: pequeños guardianes que hacen grande tu dominio"
 description: "Los Value Objects son la pieza que separa código que funciona de código que representa el dominio correctamente. Implementación real en Code Finances con validaciones inmutables."
-pubDate: 2025-04-28
+pubDate: 2025-03-31
 tags: ["Value Objects", "DDD", "SOLID", "Code Finances", "TypeScript", "Diseño de Software"]
 ---
 
@@ -184,6 +184,26 @@ const updated = percentage.update(80)
 
 <h2 style="color:oklch(67.3% 0.182 276.935); font-weight:700; margin-top:2rem;">💬 Conclusión</h2>
 <br />
+
+```mermaid
+flowchart TD
+    IN[Input primitivo\nstring / number] --> VO
+
+    subgraph VO[Value Object]
+        V{Validación}
+        V -->|inválido| ERR[DomainError]
+        V -->|válido| OBJ[Objeto inmutable]
+    end
+
+    OBJ --> E[Entidad / Agregado]
+    E -->|usa| OBJ
+    OBJ -->|comparación por valor| OBJ2[Otro Value Object]
+
+    style VO fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
+    style ERR fill:#3b0764,stroke:#a855f7,color:#f3e8ff
+    style OBJ fill:#0f172a,stroke:#818cf8,color:#e0e7ff
+    style E fill:#0f172a,stroke:#818cf8,color:#e0e7ff
+```
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
   Los Value Objects son esos pequeños detalles que separan código que <em>funciona</em> de código que <strong>representa el dominio correctamente</strong>.

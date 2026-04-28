@@ -1,7 +1,7 @@
 ---
 title: "Object Mother: cómo generar datos de test sin ensuciar tus tests"
 description: "El patrón Object Mother como factoría de datos para tests: limpio, reutilizable y mantenible. Implementación real en Code Finances con Faker."
-pubDate: 2025-04-28
+pubDate: 2025-03-17
 tags: ["Testing", "Object Mother", "TDD", "Code Finances", "TypeScript", "Buenas Prácticas"]
 ---
 

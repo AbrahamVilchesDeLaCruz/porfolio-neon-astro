@@ -1,7 +1,7 @@
 ---
 title: "Presentación del proyecto Code Finances"
 description: "Gestión de patrimonios desde cero, aplicando DDD, Clean Architecture, Event-Driven Architecture y TDD."
-pubDate: 2025-08-04
+pubDate: 2025-01-20
 tags:
   [
     "Code Finances",
@@ -45,6 +45,16 @@ tags:
       <li>Donaciones: 2.5%</li>
     </ul>
   </div>
+
+```mermaid
+pie title Distribución de ingresos — Code Finances
+  "Obligaciones" : 50
+  "Inversión" : 20
+  "Ocio" : 15
+  "Ahorro" : 10
+  "Educación" : 2.5
+  "Donaciones" : 2.5
+```
 
   <p class="mt-6 text-slate-700 dark:text-slate-300 leading-relaxed">
     Además, el sistema incluye una sección específica para el <strong>seguimiento de inversiones</strong>: criptomonedas, acciones, bienes raíces, fondos indexados... Todo consolidado y organizado para facilitar el análisis y la estrategia.

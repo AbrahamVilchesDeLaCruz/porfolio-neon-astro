@@ -1,7 +1,7 @@
 ---
 title: "Criteria: filtros dinámicos, paginación y DDD"
 description: "Cómo el patrón Criteria + Specification resuelve el problema de los filtros dinámicos en repositorios sin contaminar el dominio con infraestructura. Ejemplo real en Code Finances."
-pubDate: 2025-04-28
+pubDate: 2025-03-03
 tags: ["Criteria", "Specification Pattern", "DDD", "Clean Architecture", "TypeScript", "Repositorios"]
 ---
 
@@ -68,6 +68,35 @@ criteria = new Criteria(filters, order, pageSize, pageNumber)
 
 ```ts
 repository.match(criteria)
+```
+
+```mermaid
+flowchart LR
+    subgraph Dominio
+        F1[Filter: role=admin]
+        F2[Filter: status=active]
+        O[Order: name ASC]
+        P[Page: 1 / size: 20]
+        C[Criteria]
+        F1 --> C
+        F2 --> C
+        O --> C
+        P --> C
+    end
+
+    subgraph Infraestructura
+        R[Repository.match]
+        QB[QueryBuilder]
+        DB[(PostgreSQL)]
+        C --> R
+        R --> QB
+        QB --> DB
+    end
+
+    style C fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
+    style R fill:#0f172a,stroke:#818cf8,color:#e0e7ff
+    style QB fill:#0f172a,stroke:#818cf8,color:#e0e7ff
+    style DB fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
 ```
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />

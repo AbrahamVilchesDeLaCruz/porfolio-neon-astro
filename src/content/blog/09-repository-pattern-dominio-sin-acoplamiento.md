@@ -87,6 +87,35 @@ class TypeOrmLiquidityCategoryRepository implements LiquidityCategoryRepository 
 }
 ```
 
+```mermaid
+flowchart TB
+    subgraph Dominio
+        I[LiquidityCategoryRepository\ninterfaz]
+    end
+
+    subgraph Aplicación
+        UC[LiquidityCategoryCreator\ncaso de uso]
+        UC -->|depende de| I
+    end
+
+    subgraph Infraestructura
+        IMPL[TypeOrmLiquidityCategory\nRepository]
+        IMPL -->|implementa| I
+        DB[(PostgreSQL\nTypeORM)]
+        IMPL --> DB
+    end
+
+    subgraph Tests
+        MOCK[InMemoryRepository\nmock]
+        MOCK -->|implementa| I
+    end
+
+    style Dominio fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
+    style Aplicación fill:#0f172a,stroke:#818cf8,color:#e0e7ff
+    style Infraestructura fill:#0f172a,stroke:#818cf8,color:#e0e7ff
+    style Tests fill:#1e3a1e,stroke:#4ade80,color:#dcfce7
+```
+
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />
 
 <h2 style="color:oklch(67.3% 0.182 276.935); font-weight:700; margin-top:2rem;">🔄 ¿Qué conseguimos?</h2>

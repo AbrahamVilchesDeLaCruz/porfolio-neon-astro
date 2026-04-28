@@ -1,4 +1,23 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@utility prose-neon {
+  --tw-prose-body: rgba(255,255,255,0.85);
+  --tw-prose-headings: #818cf8;
+  --tw-prose-lead: rgba(255,255,255,0.7);
+  --tw-prose-links: #818cf8;
+  --tw-prose-bold: #ffffff;
+  --tw-prose-code: #818cf8;
+  --tw-prose-pre-bg: #0a0a0a;
+  --tw-prose-quote-borders: #818cf8;
+  --tw-prose-quotes: rgba(255,255,255,0.85);
+  --tw-prose-counters: rgba(255,255,255,0.6);
+  --tw-prose-bullets: #818cf8;
+  --tw-prose-hr: rgba(255,255,255,0.1);
+  --tw-prose-captions: rgba(255,255,255,0.5);
+  --tw-prose-th-borders: rgba(255,255,255,0.2);
+  --tw-prose-td-borders: rgba(255,255,255,0.1);
+}
 
 html {
   scroll-behavior: smooth;

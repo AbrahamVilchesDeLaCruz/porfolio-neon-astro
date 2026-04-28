@@ -1,7 +1,7 @@
 ---
 title: "Bienvenidos a Desde La Capa De Dominio"
 description: "Un espacio para pensar el software antes de escribirlo. Diseño estratégico, decisiones técnicas con sentido y proyectos reales."
-pubDate: 2025-07-29
+pubDate: 2025-01-06
 image: "/icon.png"
 tags: ["Desde la Capa de Dominio", "Presentación", "Diseño", "Estrategia", "Arquitectura"]
 ---
