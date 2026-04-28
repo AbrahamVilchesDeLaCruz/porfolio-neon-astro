@@ -1,0 +1,43 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro'
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+
+const posts: CollectionEntry<'blog'>[] = await getCollection('blog')
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+---
+
+<BlogLayout
+  title="Todos los artículos — Desde la Capa de Dominio"
+  description="Archivo completo de artículos sobre DDD, arquitectura de software, patrones de diseño y buenas prácticas. Por Abraham Vilches."
+>
+  <main class="space-y-10">
+    <section class="space-y-2">
+      <h1 class="text-3xl font-bold text-indigo-400">Todos los artículos</h1>
+      <p class="text-white/60 text-sm">
+        <a href="/blog" class="hover:text-white transition">← Volver al inicio</a>
+      </p>
+    </section>
+
+    <ul class="space-y-4">
+      {
+        sortedPosts.map((post) => (
+          <li class="border-b border-white/10 pb-4">
+            <a
+              href={`/blog/${post.id}/`}
+              class="text-xl font-semibold text-indigo-400 hover:underline"
+            >
+              {post.data.title}
+            </a>
+            <p class="text-sm text-white/60">{post.data.description}</p>
+            <time class="text-xs text-white/40">
+              {post.data.pubDate.toLocaleDateString('es-ES')}
+            </time>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</BlogLayout>
