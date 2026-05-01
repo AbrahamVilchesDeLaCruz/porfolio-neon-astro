@@ -26,11 +26,11 @@ tags: ["IA", "Patrones de Diseño", "Criteria", "Clean Architecture", "DDD", "In
 <br />
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Lo que la IA no hace es <strong>diseñar a largo plazo</strong>. Puede que te sirva para apagar un fuego, pero no te da para acabar con el incendio. Por lo menos si no la guiás en soluciones completas. Dándole tus gafas. Tus ideas. Tu conocimiento.
+  Lo que la IA no hace es <strong>diseñar a largo plazo</strong>. Puede que te sirva para apagar un fuego, pero no basta para acabar con el incendio. Al menos, si no la guías hacia soluciones completas. Le das tus gafas. Tus ideas. Tu conocimiento.
 </p>
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-top:1rem;">
-  Si sos ingeniero de software, desarrollador o apasionado por la programación: <strong>aprende patrones de diseño. Aprende las bases.</strong> Y después, propúlsate usando IA. No hay ningún problema en eso.
+  Si eres ingeniero de software, desarrollador o alguien apasionado por la programación: <strong>aprende patrones de diseño. Aprende las bases.</strong> Y después, apóyate en la IA. No hay ningún problema en eso.
 </p>
 
 <br />
@@ -39,11 +39,11 @@ tags: ["IA", "Patrones de Diseño", "Criteria", "Clean Architecture", "DDD", "In
 <br />
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Como ejemplo de lo que significa diseñar con intención, os dejo una solución a un problema bastante común en los sistemas: la capacidad de <strong>filtrar y paginar en una API de manera elegante y sostenible</strong>, sin que el repositorio crezca hasta el infinito.
+  Como ejemplo de lo que significa diseñar con intención, te dejo una solución a un problema bastante común en los sistemas: la capacidad de <strong>filtrar y paginar en una API de manera elegante y sostenible</strong>, sin que el repositorio crezca hasta el infinito.
 </p>
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-top:1rem;">
-  El <strong>patrón Criteria</strong> resuelve exactamente eso. En vez de tener un método por cada combinación posible de filtros en el repositorio, encapsulás los criterios de búsqueda en un objeto que el repositorio sabe interpretar. El repositorio no crece. La lógica de filtrado vive en el dominio. Y podés componer criterios con libertad.
+  El <strong>patrón Criteria</strong> resuelve exactamente eso. En vez de tener un método por cada combinación posible de filtros en el repositorio, encapsulas los criterios de búsqueda en un objeto que el repositorio sabe interpretar. El repositorio no crece. La lógica de filtrado vive en el dominio. Y puedes componer criterios con libertad.
 </p>
 
 <div style="margin-top:1.5rem; border-left: 3px solid oklch(67.3% 0.182 276.935); padding-left:1rem;">
@@ -65,7 +65,7 @@ tags: ["IA", "Patrones de Diseño", "Criteria", "Clean Architecture", "DDD", "In
 </p>
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-top:1rem;">
-  Este es exactamente el tipo de solución que la IA no te va a proponer sola. Necesita que vos llegues con el patrón en la cabeza, con el problema entendido, y la uses como acelerador. No como arquitecto.
+  Este es exactamente el tipo de solución que la IA no te va a proponer sola. Necesita que tú llegues con el patrón en la cabeza, con el problema entendido, y que la uses como acelerador. No como arquitecto.
 </p>
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />

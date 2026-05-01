@@ -10,7 +10,7 @@ tags: ["Testing", "Object Mother", "TDD", "Code Finances", "TypeScript", "Buenas
 </p>
 
 <blockquote style="border-left:3px solid oklch(67.3% 0.182 276.935); padding-left:1rem; margin:1.5rem 0; color:#94A3B8; font-style:italic;">
-  "Para testear bien, primero necesitás datos válidos, coherentes y fáciles de generar."
+  "Para testear bien, primero necesitas datos válidos, coherentes y fáciles de generar."
 </blockquote>
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
@@ -32,14 +32,14 @@ tags: ["Testing", "Object Mother", "TDD", "Code Finances", "TypeScript", "Buenas
 <br />
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Cuando no tenés una estrategia clara para generar datos de test:
+  Cuando no tienes una estrategia clara para generar datos de test:
 </p>
 
 <ul style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-left:1.5rem; margin-top:0.75rem;">
-  <li>🧩 Repetís la creación de objetos en cada test</li>
+  <li>🧩 Repites la creación de objetos en cada test</li>
   <li>😵 Los tests se llenan de ruido (datos irrelevantes)</li>
   <li>🔧 Cambiar un campo rompe múltiples tests</li>
-  <li>🧠 Perdés foco en lo importante: el comportamiento</li>
+  <li>🧠 Pierdes el foco en lo importante: el comportamiento</li>
 </ul>
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />
@@ -137,10 +137,10 @@ const result = await revenueCreator.execute(request)
 <br />
 
 <ul style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-left:1.5rem;">
-  <li>Mantené los Object Mothers simples</li>
-  <li>Evitá lógica compleja o decisiones internas</li>
-  <li>Generá datos realistas, pero controlados</li>
-  <li>Si necesitás variaciones, permitir overrides sencillos</li>
+  <li>Mantén los Object Mothers simples</li>
+  <li>Evita lógica compleja o decisiones internas</li>
+  <li>Genera datos realistas, pero controlados</li>
+  <li>Si necesitas variaciones, permite <em>overrides</em> sencillos</li>
 </ul>
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />
@@ -160,7 +160,7 @@ const result = await revenueCreator.execute(request)
 <br />
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Dependiendo del contexto, podés combinar o usar alternativas:
+  Dependiendo del contexto, puedes combinarlo con otras alternativas o utilizar enfoques distintos:
 </p>
 
 <ul style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-left:1.5rem; margin-top:0.75rem;">

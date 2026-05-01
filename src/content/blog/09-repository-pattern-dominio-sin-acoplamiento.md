@@ -38,7 +38,7 @@ tags: ["Repository Pattern", "DDD", "Clean Architecture", "SOLID", "Code Finance
 <br />
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Es un patrón que nos permite <strong>encapsular la lógica de persistencia</strong> y <strong>desacoplar el dominio de la infraestructura</strong>. Tu dominio <strong>no sabe</strong> si usás SQL, NoSQL o cualquier otra cosa.
+  Es un patrón que nos permite <strong>encapsular la lógica de persistencia</strong> y <strong>desacoplar el dominio de la infraestructura</strong>. Tu dominio <strong>no sabe</strong> si usas SQL, NoSQL o cualquier otra cosa.
 </p>
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />
@@ -48,8 +48,8 @@ tags: ["Repository Pattern", "DDD", "Clean Architecture", "SOLID", "Code Finance
 
 <ul style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-left:1.5rem;">
   <li>✅ <strong>SRP</strong> — cada clase tiene una única responsabilidad</li>
-  <li>🔓 <strong>OCP</strong> — podés extender sin modificar</li>
-  <li>🔌 <strong>DIP</strong> — dependés de interfaces, no de implementaciones</li>
+  <li>🔓 <strong>OCP</strong> — puedes extender sin modificar</li>
+  <li>🔌 <strong>DIP</strong> — dependes de interfaces, no de implementaciones</li>
 </ul>
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />
@@ -89,29 +89,32 @@ class TypeOrmLiquidityCategoryRepository implements LiquidityCategoryRepository 
 
 ```mermaid
 flowchart TB
-    subgraph Dominio
-        I[LiquidityCategoryRepository\ninterfaz]
+    subgraph Aplicacion[Aplicación]
+        UC["LiquidityCategoryCreator<br/>caso de uso"]
     end
 
-    subgraph Aplicación
-        UC[LiquidityCategoryCreator\ncaso de uso]
-        UC -->|depende de| I
+    subgraph Dominio
+        I["LiquidityCategoryRepository<br/>interfaz"]
     end
+
+    UC -->|depende de| I
 
     subgraph Infraestructura
-        IMPL[TypeOrmLiquidityCategory\nRepository]
-        IMPL -->|implementa| I
-        DB[(PostgreSQL\nTypeORM)]
+        direction TB
+        IMPL["TypeOrmLiquidityCategory<br/>Repository"]
+        DB[("PostgreSQL<br/>TypeORM")]
         IMPL --> DB
     end
 
     subgraph Tests
-        MOCK[InMemoryRepository\nmock]
-        MOCK -->|implementa| I
+        MOCK["InMemoryRepository<br/>mock"]
     end
 
+    I -.->|implementa| IMPL
+    I -.->|implementa| MOCK
+
     style Dominio fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
-    style Aplicación fill:#0f172a,stroke:#818cf8,color:#e0e7ff
+    style Aplicacion fill:#0f172a,stroke:#818cf8,color:#e0e7ff
     style Infraestructura fill:#0f172a,stroke:#818cf8,color:#e0e7ff
     style Tests fill:#1e3a1e,stroke:#4ade80,color:#dcfce7
 ```
@@ -137,18 +140,18 @@ flowchart TB
   <div style="flex:1; min-width:200px;">
     <p style="color:#f87171; font-weight:600; margin-bottom:0.5rem;">❌ Enfoque típico</p>
     <ol style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-left:1.25rem;">
-      <li>Elegís base de datos</li>
-      <li>Diseñás tablas</li>
-      <li>Adaptás el dominio a eso</li>
+      <li>Eliges base de datos</li>
+      <li>Diseñas tablas</li>
+      <li>Adaptas el dominio a eso</li>
     </ol>
     <p style="color:#f87171; margin-top:0.75rem; font-size:0.9rem;">→ Dominio acoplado, difícil de cambiar, código rígido.</p>
   </div>
   <div style="flex:1; min-width:200px;">
     <p style="color:oklch(67.3% 0.182 276.935); font-weight:600; margin-bottom:0.5rem;">✅ Enfoque correcto</p>
     <ol style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-left:1.25rem;">
-      <li>Diseñás el dominio</li>
-      <li>Definís repositorios (interfaces)</li>
-      <li>Implementás la infraestructura después</li>
+      <li>Diseñas el dominio</li>
+      <li>Defines repositorios (interfaces)</li>
+      <li>Implementas la infraestructura después</li>
     </ol>
     <p style="color:oklch(67.3% 0.182 276.935); margin-top:0.75rem; font-size:0.9rem;">→ La base de datos es un detalle. El dominio es lo importante.</p>
   </div>
