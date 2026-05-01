@@ -6,7 +6,7 @@ tags: ["Criteria", "Specification Pattern", "DDD", "Clean Architecture", "TypeSc
 ---
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Cuando trabajas en aplicaciones reales, hay un momento inevitable: necesitás hacer búsquedas complejas.
+  Cuando trabajas en aplicaciones reales, hay un momento inevitable: necesitas hacer búsquedas complejas.
 </p>
 
 <blockquote style="border-left:3px solid oklch(67.3% 0.182 276.935); padding-left:1rem; margin:1.5rem 0; color:#94A3B8; font-style:italic;">
@@ -23,7 +23,7 @@ tags: ["Criteria", "Specification Pattern", "DDD", "Clean Architecture", "TypeSc
 <br />
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  En cuanto empezás a añadir filtros dinámicos en tus repositorios:
+  En cuanto empiezas a añadir filtros dinámicos en tus repositorios:
 </p>
 
 <ul style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-left:1.5rem; margin-top:1rem;">
@@ -54,7 +54,7 @@ tags: ["Criteria", "Specification Pattern", "DDD", "Clean Architecture", "TypeSc
 
 <h3 style="color:oklch(67.3% 0.182 276.935); font-weight:600; margin-top:1.5rem;">🔗 Composición dinámica</h3>
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Podés combinar filtros sin modificar el repositorio:
+  Puedes combinar filtros sin modificar el repositorio:
 </p>
 
 ```ts
@@ -71,8 +71,9 @@ repository.match(criteria)
 ```
 
 ```mermaid
-flowchart LR
+flowchart TB
     subgraph Dominio
+        direction TB
         F1[Filter: role=admin]
         F2[Filter: status=active]
         O[Order: name ASC]
@@ -85,13 +86,15 @@ flowchart LR
     end
 
     subgraph Infraestructura
+        direction TB
         R[Repository.match]
         QB[QueryBuilder]
         DB[(PostgreSQL)]
-        C --> R
         R --> QB
         QB --> DB
     end
+
+    C --> R
 
     style C fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
     style R fill:#0f172a,stroke:#818cf8,color:#e0e7ff
@@ -177,7 +180,7 @@ interface ContextRepository {
 </p>
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-top:1rem;">
-  Dejás de escribir queries específicas para cada caso y empezás a construir un sistema flexible que evoluciona con vos. Y lo mejor: una vez lo implementás bien, no querés volver atrás.
+  Dejas de escribir queries específicas para cada caso y empiezas a construir un sistema flexible que evoluciona contigo. Y lo mejor: una vez lo implementas bien, no quieres volver atrás.
 </p>
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />

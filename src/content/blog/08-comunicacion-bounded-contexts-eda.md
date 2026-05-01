@@ -6,7 +6,7 @@ tags: ["Event-Driven Architecture", "DDD", "Bounded Contexts", "RabbitMQ", "Code
 ---
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Seguimos con la serie de <strong>Code Finances</strong> y hoy entramos en un tema clave cuando trabajás con Domain Driven Design: cómo se comunican los distintos Bounded Contexts.
+  Seguimos con la serie de <strong>Code Finances</strong> y hoy entramos en un tema clave cuando trabajas con Domain Driven Design: cómo se comunican los distintos Bounded Contexts.
 </p>
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-top:1rem;">
@@ -52,29 +52,31 @@ eventBus.publish(new RevenueCreatedEvent(...))
 </p>
 
 ```mermaid
-flowchart LR
+flowchart TB
     subgraph CF[Cash Flow BC]
-        UC[CreateRevenue\nUseCase]
-        UC -->|emite| EV[RevenueCreatedEvent]
+        direction TB
+        UC["CreateRevenue<br/>UseCase"]
+        EV[RevenueCreatedEvent]
+        UC -->|emite| EV
     end
 
     EV -->|publica| RMQ[RabbitMQ]
 
+    RMQ --> S1
+    RMQ --> S2
+    RMQ --> S3
+
     subgraph LC[Liquidity Categories BC]
-        S1[AllocateLiquidity\nSubscriber]
+        S1["AllocateLiquidity<br/>Subscriber"]
     end
 
     subgraph EQ[Equity BC]
-        S2[UpdateEquity\nSubscriber]
+        S2["UpdateEquity<br/>Subscriber"]
     end
 
     subgraph PR[Projections BC]
-        S3[RecalcProjections\nSubscriber]
+        S3["RecalcProjections<br/>Subscriber"]
     end
-
-    RMQ -->|consume| S1
-    RMQ -->|consume| S2
-    RMQ -->|consume| S3
 
     style CF fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
     style LC fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
@@ -116,7 +118,7 @@ flowchart LR
 <br />
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Una de las decisiones más importantes: <strong>cómo nombrás tus eventos</strong>. En <em>Code Finances</em> seguimos estas convenciones:
+  Una de las decisiones más importantes: <strong>cómo nombras tus eventos</strong>. En <em>Code Finances</em> seguimos estas convenciones:
 </p>
 
 <h3 style="color:oklch(67.3% 0.182 276.935); font-weight:600; margin-top:1.5rem;">🔑 Eventos de dominio</h3>

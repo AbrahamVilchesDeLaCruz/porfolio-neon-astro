@@ -1,5 +1,5 @@
 ---
-title: "PostgreSQL como cola de mensajería? Depende."
+title: "¿PostgreSQL como cola de mensajería? Depende."
 description: "Reflexiones sobre cuándo usar PostgreSQL como event bus, cómo implementarlo con dos tablas y cómo se relaciona con las transacciones en sistemas con arquitectura orientada a eventos."
 pubDate: 2025-02-03
 tags: ["Event-Driven Architecture", "PostgreSQL", "DDD", "Clean Architecture", "SOLID", "Infraestructura"]
@@ -28,7 +28,7 @@ tags: ["Event-Driven Architecture", "PostgreSQL", "DDD", "Clean Architecture", "
 <br />
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Volviendo a la pregunta del principio: de vuelta, <strong>depende</strong>. Un bus en memoria podría solventar todos los problemas de mantenibilidad y testeabilidad, y en caso de ser un sistema sencillo donde podamos permitirnos sincronía, es una buena solución.
+  Volviendo a la pregunta del principio: una vez más, <strong>depende</strong>. Un bus en memoria podría resolver todos los problemas de mantenibilidad y testeabilidad y, en el caso de un sistema sencillo en el que podamos permitirnos sincronía, es una buena solución.
 </p>
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
@@ -64,17 +64,25 @@ tags: ["Event-Driven Architecture", "PostgreSQL", "DDD", "Clean Architecture", "
 </p>
 
 ```mermaid
-flowchart TD
-    UC[Use Case] -->|publica| EB[Event Bus]
-    EB -->|inserta| EV[(domain_events)]
-    EV -->|referencia| SR[(event_subscribers)]
-    W[Worker] -->|poll + SKIP LOCKED| EV
-    W -->|ejecuta| S1[Subscriber A]
-    W -->|ejecuta| S2[Subscriber B]
+flowchart TB
+    UC[Use Case]
+    EB[Event Bus]
+    EV[(domain_events)]
+    SR[(event_subscribers)]
+    W[Worker]
+    S1[Subscriber A]
+    S2[Subscriber B]
+    DL[(dead_letter)]
+
+    UC -->|publica| EB
+    EB -->|inserta| EV
+    EV -.->|referencia| SR
+    EV -->|poll + SKIP LOCKED| W
+    W --> S1
+    W --> S2
     S1 -->|marca procesado| EV
     S2 -->|marca procesado| EV
-    EV -->|fallo → retry| W
-    EV -->|max retries| DL[(dead_letter)]
+    EV -->|max retries| DL
 
     style EV fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
     style SR fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff

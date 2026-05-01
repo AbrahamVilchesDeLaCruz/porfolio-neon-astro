@@ -10,7 +10,7 @@ tags: ["Value Objects", "DDD", "SOLID", "Code Finances", "TypeScript", "Diseño 
 </p>
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-top:1rem;">
-  Si estás trabajando con DDD o simplemente querés escribir código más robusto, esto te interesa.
+  Si estás trabajando con DDD o simplemente quieres escribir código más robusto, esto te interesa.
 </p>
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />
@@ -143,7 +143,7 @@ class LiquidityCategoryPercentage {
 <br />
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894);">
-  Cuando necesitás modificar el valor, no mutás el objeto original. Creás uno nuevo válido:
+  Cuando necesitas modificar el valor, no mutas el objeto original. Creas uno nuevo válido:
 </p>
 
 ```ts
@@ -161,11 +161,11 @@ const updated = percentage.update(80)
 <br />
 
 <ul style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-left:1.5rem;">
-  <li>Mantenelos <strong>inmutables</strong></li>
-  <li>Validá siempre en el constructor</li>
-  <li>Evitá exponer setters</li>
-  <li>Usá nombres del dominio, no técnicos</li>
-  <li>Hacelos pequeños y específicos</li>
+  <li>Mantenlos <strong>inmutables</strong></li>
+  <li>Valida siempre en el constructor</li>
+  <li>Evita exponer setters</li>
+  <li>Usa nombres del dominio, no técnicos</li>
+  <li>Hazlos pequeños y específicos</li>
 </ul>
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />
@@ -186,18 +186,18 @@ const updated = percentage.update(80)
 <br />
 
 ```mermaid
-flowchart TD
-    IN[Input primitivo\nstring / number] --> VO
+flowchart TB
+    IN["Input primitivo<br/>string / number"] --> VO
 
     subgraph VO[Value Object]
+        direction TB
         V{Validación}
         V -->|inválido| ERR[DomainError]
         V -->|válido| OBJ[Objeto inmutable]
     end
 
     OBJ --> E[Entidad / Agregado]
-    E -->|usa| OBJ
-    OBJ -->|comparación por valor| OBJ2[Otro Value Object]
+    OBJ -.->|comparación por valor| OBJ2[Otro Value Object]
 
     style VO fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
     style ERR fill:#3b0764,stroke:#a855f7,color:#f3e8ff
@@ -220,7 +220,7 @@ flowchart TD
 </ul>
 
 <p style="line-height:1.7; color:oklch(86.9% 0.022 252.894); margin-top:1rem;">
-  Y cuando los adoptás bien… tu diseño cambia por completo.
+  Y cuando los adoptas bien… tu diseño cambia por completo.
 </p>
 
 <hr style="margin:2rem 0; border:none; border-top:1px solid #CBD5E1;" />
