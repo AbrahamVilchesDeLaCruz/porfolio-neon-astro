@@ -48,8 +48,8 @@ export const experiences: Experience[] = [
       { name: "Docker", icon: <FaDocker className="text-4xl text-blue-500" /> },
     ],
     frontendTechnologies: [
-      { name: "React", icon: <FaReact className="text-4xl text-mariner-400" /> },
-      { name: "TailwindCSS", icon: <SiTailwindcss className="text-4xl text-mariner-400" /> },
+      { name: "React", icon: <FaReact className="text-4xl text-indigo-400" /> },
+      { name: "TailwindCSS", icon: <SiTailwindcss className="text-4xl text-indigo-400" /> },
       { name: "Vite", icon: <SiVite className="text-4xl text-purple-400" /> },
     ],
     image: "/logos/devio-tech.png",
@@ -75,8 +75,8 @@ export const experiences: Experience[] = [
       { name: "Docker", icon: <FaDocker className="text-4xl text-blue-500" /> },
     ],
     frontendTechnologies: [
-      { name: "React", icon: <FaReact className="text-4xl text-mariner-400" /> },
-      { name: "TailwindCSS", icon: <SiTailwindcss className="text-4xl text-mariner-400" /> },
+      { name: "React", icon: <FaReact className="text-4xl text-indigo-400" /> },
+      { name: "TailwindCSS", icon: <SiTailwindcss className="text-4xl text-indigo-400" /> },
       { name: "Vite", icon: <SiVite className="text-4xl text-purple-400" /> },
     ],
     image: "/logos/feeder.png",
@@ -98,10 +98,10 @@ export const experiences: Experience[] = [
       { name: "Socket.IO", icon: <TbBrandSocketIo className="text-4xl text-teal-500" /> },
     ],
     frontendTechnologies: [
-      { name: "React", icon: <FaReact className="text-4xl text-mariner-400" /> },
+      { name: "React", icon: <FaReact className="text-4xl text-indigo-400" /> },
       {
         name: "TailwindCSS",
-        icon: <SiTailwindcss className="text-4xl text-mariner-400" />,
+        icon: <SiTailwindcss className="text-4xl text-indigo-400" />,
       },
     ],
     image: "/logos/sensing-tex.png",

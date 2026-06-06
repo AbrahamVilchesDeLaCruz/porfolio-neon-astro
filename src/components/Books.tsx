@@ -57,16 +57,16 @@ const Books: React.FC = () => {
         <div className="relative w-full flex items-center justify-center">
           <button
             onClick={prevSlide}
-            className="absolute bg-transparent left-2 z-10 p-2 rounded-full shadow-lg hover:bg-mariner-900/50 top-1/2 -translate-y-1/2"
+            className="absolute bg-transparent left-2 z-10 p-2 rounded-full shadow-lg hover:bg-indigo-900/50 top-1/2 -translate-y-1/2"
           >
-            <FaChevronLeft className="text-2xl text-mariner-400" />
+            <FaChevronLeft className="text-2xl text-indigo-400" />
           </button>
 
           <div className="w-full px-12">
             {displayBooks.map((book) => (
               <div
                 key={book.id}
-                className="border-2 border-mariner-400 rounded-lg shadow-lg overflow-hidden flex flex-col items-center justify-center h-[440px]"
+                className="border-2 border-indigo-400 rounded-lg shadow-lg overflow-hidden flex flex-col items-center justify-center h-[440px]"
               >
                 <div className="flex items-center justify-center h-[250px] w-full">
                   <img
@@ -76,11 +76,11 @@ const Books: React.FC = () => {
                   />
                 </div>
                 <div className="p-4 flex flex-col justify-between w-full">
-                  <h3 className="text-xl font-semibold mb-2 text-mariner-300 text-center">
+                  <h3 className="text-xl font-semibold mb-2 text-indigo-300 text-center">
                     {book.title}
                   </h3>
-                  <p className="text-mariner-600 mb-4 text-center">{book.author}</p>
-                  <button className="bg-mariner-900 text-mariner-300 px-4 py-2 rounded-lg">
+                  <p className="text-indigo-600 mb-4 text-center">{book.author}</p>
+                  <button className="bg-indigo-900 text-indigo-300 px-4 py-2 rounded-lg">
                     <a
                       href={book.amazonUrl}
                       target="_blank"
@@ -96,9 +96,9 @@ const Books: React.FC = () => {
 
           <button
             onClick={nextSlide}
-            className="absolute right-2 z-10 bg-transparent p-2 rounded-full shadow-lg hover:bg-mariner-900/50 top-1/2 -translate-y-1/2"
+            className="absolute right-2 z-10 bg-transparent p-2 rounded-full shadow-lg hover:bg-indigo-900/50 top-1/2 -translate-y-1/2"
           >
-            <FaChevronRight className="text-2xl text-mariner-400" />
+            <FaChevronRight className="text-2xl text-indigo-400" />
           </button>
         </div>
       ) : (
@@ -126,29 +126,29 @@ const Books: React.FC = () => {
             ))}
           </div>
           {!selectedBook && (
-            <p className="text-sm text-mariner-700 text-center mt-2">← Hacé clic en un libro para ver más →</p>
+            <p className="text-sm text-indigo-700 text-center mt-2">← Hacé clic en un libro para ver más →</p>
           )}
 
           {selectedBook && (
-            <div className="w-full md:max-w-2xl flex flex-col md:flex-row justify-center items-center h-auto bg-mariner-950 border-2 border-mariner-400 rounded-lg p-8 shadow-lg gap-4">
+            <div className="w-full md:max-w-2xl flex flex-col md:flex-row justify-center items-center h-auto bg-indigo-950 border-2 border-indigo-400 rounded-lg p-8 shadow-lg gap-4">
               <img
                 src={selectedBook.image}
                 alt={selectedBook.title}
-                className="w-64 h-auto object-cover shadow-neon"
+                className="w-64 h-auto object-cover"
               />
               <article className="flex flex-col justify-center text-center items-center gap-y-6">
                 <header>
-                  <h2 className="text-xl font-semibold text-mariner-100 mb-1 text-center">
+                  <h2 className="text-xl font-semibold text-indigo-100 mb-1 text-center">
                     {selectedBook.title}
                   </h2>
-                  <p className="text-sm text-mariner-300 mb-1 text-center">
+                  <p className="text-sm text-indigo-300 mb-1 text-center">
                     Autor: {selectedBook.author}
                   </p>
                 </header>
-                <p className="text-sm text-mariner-100 neon-effect mb-1 text-center">
+                <p className="text-sm text-indigo-100 mb-1 text-center">
                   {selectedBook.summary}
                 </p>
-                <button className="bg-mariner-900 text-mariner-300 px-4 py-2 rounded-lg text-sm">
+                <button className="bg-indigo-900 text-indigo-300 px-4 py-2 rounded-lg text-sm">
                   <a
                     href={selectedBook.amazonUrl}
                     target="_blank"

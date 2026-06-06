@@ -22,7 +22,7 @@ const TechMarquee = ({ techs, direction }: { techs: Tech[]; direction: "left" | 
         {doubled.map((tech, idx) => (
           <span
             key={idx}
-            className="flex items-center gap-1.5 bg-mariner-900/60 text-mariner-300 px-3 py-1 rounded-full text-xs font-medium border border-mariner-800 whitespace-nowrap"
+            className="flex items-center gap-1.5 bg-indigo-900/60 text-indigo-300 px-3 py-1 rounded-full text-xs font-medium border border-indigo-800 whitespace-nowrap"
           >
             <span className="text-base leading-none" aria-hidden="true">{tech.icon}</span>
             {tech.name}
@@ -37,16 +37,16 @@ export const ExperienceTimelineItem = ({ experience }: Props) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex flex-col h-full bg-mariner-950/40 border border-mariner-700 hover:border-mariner-400 rounded-xl overflow-hidden transition-colors duration-300">
+    <div className="flex flex-col h-full bg-indigo-950/40 border border-indigo-700 hover:border-indigo-400 rounded-xl overflow-hidden transition-colors duration-300">
 
       {/* Banda superior — frontend → izquierda */}
-      <div className="border-b border-mariner-800 bg-mariner-950/60">
+      <div className="border-b border-indigo-800 bg-indigo-950/60">
         <TechMarquee techs={experience.frontendTechnologies} direction="left" />
       </div>
 
       {/* Header: logo + puesto + empresa + período — siempre visible */}
       <div className="flex items-center gap-5 px-6 py-5">
-        <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-mariner-950 rounded-lg p-2 border border-mariner-800">
+        <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-indigo-950 rounded-lg p-2 border border-indigo-800">
           <img
             src={experience.image}
             alt={`Logo de ${experience.company}`}
@@ -56,13 +56,13 @@ export const ExperienceTimelineItem = ({ experience }: Props) => {
         </div>
         <div className="flex-1 min-w-0">
           <h3 className="text-base font-semibold text-white">{experience.role}</h3>
-          <p className="text-sm text-mariner-300">{experience.company}</p>
-          <p className="text-xs text-mariner-500 mt-0.5">{experience.period}</p>
+          <p className="text-sm text-indigo-300">{experience.company}</p>
+          <p className="text-xs text-indigo-500 mt-0.5">{experience.period}</p>
         </div>
         {/* Chevron — solo visible en mobile para indicar acordeón */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden flex-shrink-0 p-1 text-mariner-400 hover:text-mariner-200 transition-colors"
+          className="md:hidden flex-shrink-0 p-1 text-indigo-400 hover:text-indigo-200 transition-colors"
           aria-expanded={open}
           aria-label={`${open ? "Ocultar" : "Ver"} descripción de ${experience.role} en ${experience.company}`}
         >
@@ -80,15 +80,15 @@ export const ExperienceTimelineItem = ({ experience }: Props) => {
           - Desktop (md+): siempre visible
           - Mobile: se muestra/oculta con el acordeón
       */}
-      <div className={`px-6 pb-5 flex-col gap-2 flex-grow border-t border-mariner-800 pt-4 hidden md:flex ${open ? "!flex" : ""}`}>
-        <p className="text-sm text-mariner-300 leading-relaxed">{experience.description.backend}</p>
+      <div className={`px-6 pb-5 flex-col gap-2 flex-grow border-t border-indigo-800 pt-4 hidden md:flex ${open ? "!flex" : ""}`}>
+        <p className="text-sm text-indigo-300 leading-relaxed">{experience.description.backend}</p>
         {experience.description.frontend && (
-          <p className="text-sm text-mariner-300 leading-relaxed">{experience.description.frontend}</p>
+          <p className="text-sm text-indigo-300 leading-relaxed">{experience.description.frontend}</p>
         )}
       </div>
 
       {/* Banda inferior — backend → derecha */}
-      <div className="border-t border-mariner-800 bg-mariner-950/60">
+      <div className="border-t border-indigo-800 bg-indigo-950/60">
         <TechMarquee techs={experience.backendTechnologies} direction="right" />
       </div>
     </div>
