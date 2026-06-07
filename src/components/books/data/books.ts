@@ -116,4 +116,80 @@ export const books = [
     summary:
       "Una introducción clara al enfoque de Domain-Driven Design. Muestra cómo alinear el diseño del software con las necesidades reales del negocio.",
   },
+  {
+    title: "A Philosophy of Software Design",
+    id: 14,
+    image: "https://m.media-amazon.com/images/I/711Qnv05eTL._AC_UL640_FMwebp_QL65_.jpg",
+    author: "John K. Ousterhout",
+    amazonUrl: "https://www.amazon.com/Philosophy-Software-Design-2nd/dp/173210221X",
+    summary:
+      "Aborda cómo descomponer sistemas de software complejos en módulos manejables, con foco en gestionar la complejidad como problema fundamental del diseño.",
+  },
+  {
+    title: "Software Architecture: The Hard Parts",
+    id: 15,
+    image: "https://m.media-amazon.com/images/I/61SOczlljgL._AC_UL640_FMwebp_QL65_.jpg           ",
+    author: "Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani",
+    amazonUrl:
+      "https://www.amazon.com/Software-Architecture-Trade-Off-Distributed-Architectures/dp/1492086894",
+    summary:
+      "Analiza los trade-offs de arquitecturas distribuidas, abordando granularidad de servicios, orquestación de workflows y transacciones distribuidas.",
+  },
+  {
+    title: "Git y GitHub desde cero",
+    id: 17,
+    image: "https://m.media-amazon.com/images/I/61GIOtjmw5L._AC_UL640_FMwebp_QL65_.jpg",
+    author: "Brais Moure",
+    amazonUrl:
+      "https://www.amazon.com/Git-GitHub-desde-cero-te%C3%B3rico-pr%C3%A1ctica/dp/B0C1J3FG6Q",
+    summary:
+      "Guía teórico-práctica paso a paso para aprender Git y GitHub desde cero, con 45 lecciones, decenas de comandos y un curso en vídeo de 5 horas incluido.",
+  },
+  {
+    title: "Principios de Cloud Computing",
+    id: 18,
+    image: "https://m.media-amazon.com/images/I/617VVI1lRAL._AC_UL640_FMwebp_QL65_.jpg",
+    author: "Firebird Ricardo Molina Alvarez",
+    amazonUrl:
+      "https://www.amazon.com/-/es/Firebird-Ricardo-Molina-Alvarez-ebook/dp/B0BTYLNMXF",
+    summary:
+      "Introducción a los conceptos fundamentales del cloud computing en empresas: modelos de servicio, escalabilidad, costes y flexibilidad en la nube.",
+  },
+  {
+    title: "Mastering API Architecture",
+    id: 19,
+    image: "https://m.media-amazon.com/images/I/81O4NC83UML._AC_UL640_FMwebp_QL65_.jpg",
+    author: "James Gough, Daniel Bryant, Matthew Auburn",
+    amazonUrl:
+      "https://www.amazon.com/Mastering-API-Architecture-Operate-API-Based/dp/1492090638",
+    summary:
+      "Estrategias para construir, probar y evolucionar APIs REST usando gateways y service meshes, con foco en seguridad, escalabilidad y migración a la nube.",
+  },
+  {
+    title: "The Hundred-Page Machine Learning Book",
+    id: 20,
+    image: "https://m.media-amazon.com/images/I/51vQRc5-ndL._AC_UL640_FMwebp_QL65_.jpg",
+    author: "Andriy Burkov",
+    amazonUrl: "https://www.amazon.com/Hundred-Page-Machine-Learning-Book/dp/1999579518",
+    summary:
+      "Condensación magistral del machine learning en ~100 páginas: teoría, matemáticas y práctica. Recomendado por Peter Norvig y Aurélien Géron.",
+  },
+  {
+    title: "Diseño Ágil con TDD",
+    id: 21,
+    image: "https://m.media-amazon.com/images/I/51y3EFW2LFL._AC_UL640_FMwebp_QL65_.jpg",
+    author: "Carlos Blé Jurado",
+    amazonUrl: "https://www.amazon.com/Dise%C3%B1o-%C3%81gil-Spanish-Carlos-Jurado/dp/1445264714",
+    summary:
+      "El primer libro de TDD en castellano. Enseña a escribir tests que mejoran la calidad del código y a aplicar TDD dentro de la metodología XP de forma práctica.",
+  },
+  {
+    title: "System Design Interview – Volume 2",
+    id: 22,
+    image: "	https://m.media-amazon.com/images/I/51lJolln98L._AC_UL640_FMwebp_QL65_.jpg",
+    author: "Alex Xu, Sahn Lam",
+    amazonUrl: "https://www.amazon.com/System-Design-Interview-Insiders-Guide/dp/1736049119",
+    summary:
+      "Continuación del Vol. 1, cubre nuevas preguntas de diseño de sistemas distribuidos con un framework paso a paso y ejemplos reales para preparar entrevistas técnicas.",
+  },
 ];
